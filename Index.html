@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Viaje de Transformación</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Mi Viaje de Transformación</h1>
+    <p>Documentando mi camino desde 122kg hasta 85kg. Un viaje de superación personal y disciplina.</p>
+    
+    <div class="bio-container">
+        <div class="my-story">
+            <h2>Mi Historia</h2>
+            <p>Soy Leo Cruz, 22 años, actualmente en una obesidad tipo II con 122.10 kilos.</p>
+            <p>Una de mis pasiones, aunque no lo parezca, es el ejercicio. Antes de la pandemia llegué a pesar 85kg y estaba en buena forma, pero durante el 2020, como muchos, perdí muchos hábitos saludables.</p>
+            <p>Al salir de la pandemia llegué a pesar 168kg. Desde febrero de 2022 he intentado mejorar mis hábitos. En julio de 2023 estaba en 138kg y comencé a hacer actividad física como gimnasio y boxeo.</p>
+            <p>En diciembre de 2023 añadí BJJ (Jiu-Jitsu Brasileño) a mi rutina, lo cual me ayudó a mejorar mi flexibilidad. En ese momento pesaba 124kg, pero desafortunadamente sufrí una fractura en el pie que me obligó a detenerme temporalmente.</p>
+            <p>Este sitio web documenta mi regreso y mi deseo de alcanzar los 85kg con buena forma muscular.</p>
+            <div class="signature">- Leo Cruz<br>En camino a los 85kg</div>
+        </div>
+        
+        <div class="profile-pic">
+            <!-- Reemplaza con tu foto real -->
+            <img src="tu_foto_de_perfil.jpg" alt="Leo Cruz - Transformación física">
+            <p class="motivational">"Cada día es una nueva oportunidad para ser mejor"</p>
+        </div>
+    </div>
+
+    <!-- Sección de pesaje actual -->
+    <div class="current-weight">
+        <h2>Mi Progreso</h2>
+      
+        <!-- Barra de progreso -->
+        <div class="progress-section">
+          <div class="progress-container">
+            <div class="progress-bar" id="mainProgressBar">0% completado</div>
+          </div>
+          <div class="progress-details">
+            <span id="mainCurrentWeight">122.1</span> kg de 
+            <span id="mainTargetWeight">85</span> kg
+          </div>
+        </div>
+      
+        <!-- Cuadro verde que lleva al pesaje actual -->
+        <a href="Pages/PesajeActuayAnalisis.html" class="pesaje-link">
+          Ver Pesaje Analisis del pesaje actual
+          <div class="pesaje-container">
+            <div class="pesaje-header">
+              <h3>📌 Pesaje Actual</h3>
+              <span class="pesaje-date">19/04/2025</span>
+            </div>
+            <div class="pesaje-value">122.1 kg</div>
+        </a>
+      
+        <!-- Datos debajo del cuadro -->
+        <div class="pesaje-datos">
+          <p><strong>Peso Inical:</strong> <span id="pesoActual">122.1</span> kg</p>
+          <p><strong>Fecha Inicial:</strong> <span id="fechaActual">19/04/2025</span></p>
+        </div>
+      </div>
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const barra = document.getElementById('mainProgressBar');
+          const pesoMeta = parseFloat(document.getElementById('mainTargetWeight').innerText);
+      
+          // Buscar todos los valores de pesaje en los cuadros .pesaje-value
+          const pesos = Array.from(document.querySelectorAll('.pesaje-value'))
+            .map(el => parseFloat(el.innerText));
+      
+          if (pesos.length < 2) {
+            // Solo hay un pesaje, entonces la barra debe estar en 0%
+            barra.style.width = '0%';
+            barra.innerText = '0% completado';
+          } else {
+            // El primero es el peso inicial (más antiguo), el último es el más actual
+            const pesoInicio = pesos[pesos.length - 1]; // el más antiguo
+            const pesoActual = pesos[0]; // el más nuevo
+      
+            // Cálculo del progreso
+            const progreso = ((pesoInicio - pesoActual) / (pesoInicio - pesoMeta)) * 100;
+            const porcentaje = Math.max(0, Math.min(100, progreso));
+      
+            barra.style.width = porcentaje + '%';
+            barra.innerText = Math.round(porcentaje) + '% completado';
+          }
+        });
+      </script>
+      
+    </div>      
+      
+      
+    
+    <div class="container">
+
+        <div class="card">
+            <h2>Mis Rutinas de Entrenamiento</h2>
+            <p>Rutinas de ejercicio adaptadas a mi progreso, incluyendo entrenamiento de fuerza, boxeo y BJJ cuando mi recuperación lo permita.</p>
+            <div class="divider"></div>
+            <a href="Pages/MisRutinas.html" class="button">Ver Rutinas</a>
+        </div>
+        
+        <div class="card">
+            <h2>Mis Dietas</h2>
+            <p>Planificación nutricional personalizada para apoyar mi transformación física y alcanzar mis objetivos de peso.</p>
+            <div class="divider"></div>
+            <a href="Pages/MisDietas.html" class="button">Ver Dietas</a>
+        </div>
+    </div>
+    
+    
+
+    <!-- Galería de transformación física -->
+    <div class="gallery">
+        <h2>Mi Transformación Física</h2>
+        <p>Progreso visual de mi cuerpo durante el proceso</p>
+        
+        <div class="photo-grid">
+            <div class="photo-card">
+                <img src="pictures/Foto1.jpeg" alt="Estado físico actual - Vista frontal">
+                <div class="photo-info">
+                    <p><strong>19/04/2025</strong></p>
+                    <p>Vista frontal</p>
+                </div>
+            </div>
+            
+            <div class="photo-card">
+                <img src="pictures/Foto2.jpeg" alt="Estado físico actual - Vista lateral">
+                <div class="photo-info">
+                    <p><strong>19/04/2025</strong></p>
+                    <p>Vista lateral</p>
+                </div>
+            </div>
+            
+            <div class="photo-card">
+                <img src="pictures/Foto3.jpeg" alt="Estado físico actual - Detalle">
+                <div class="photo-info">
+                    <p><strong>19/04/2025</strong></p>
+                    <p>Detalle muscular</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p><strong>Leo Cruz</strong><br>
+        En camino a los 85kg</p>
+        
+        <p>Este sitio web es un proyecto personal y no contiene consejos profesionales. Nada de lo que se muestra está aprobado por entrenadores certificados o profesionales de la nutrición.</p>
+        
+        <p>No se recomienda seguir estos planes sin consultar a un profesional de la salud.</p>
+    </footer>
+</body>
+</html>

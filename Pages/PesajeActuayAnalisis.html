@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis de Pesaje Actual | Leo Cruz</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        /* Estilos específicos para esta página */
+        .analysis-page {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .page-header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #4CAF50;
+            padding-bottom: 15px;
+        }
+        
+        .page-header h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .measurement-date {
+            font-size: 1.1em;
+            color: #7f8c8d;
+            font-weight: bold;
+        }
+        
+        .back-button {
+            display: inline-block;
+            margin-bottom: 20px;
+            background-color: #3498db;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .back-button:hover {
+            background-color: #2980b9;
+        }
+        
+        /* Secciones de análisis */
+        .analysis-section {
+            margin-bottom: 40px;
+        }
+        
+        .analysis-section h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 5px;
+            display: inline-block;
+        }
+        
+        /* Tabla de desglose */
+        .metrics-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.95em;
+        }
+        
+        .metrics-table th, 
+        .metrics-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .metrics-table th {
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .metrics-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .metrics-table tr:hover {
+            background-color: #f1f1f1;
+        }
+        
+        /* Tarjetas de recomendaciones */
+        .recommendation-card {
+            background-color: #f8f9fa;
+            border-left: 4px solid #4CAF50;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .recommendation-card h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        
+        .summary-card {
+            background-color: #e8f4fc;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 30px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: bold;
+            margin-left: 5px;
+        }
+        
+        .badge-danger {
+            background-color: #e74c3c;
+            color: white;
+        }
+        
+        .badge-warning {
+            background-color: #f39c12;
+            color: white;
+        }
+        
+        .badge-good {
+            background-color: #2ecc71;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="analysis-page">
+        <a href="../index.html" class="back-button">← Volver al Inicio</a>
+        
+        <div class="page-header">
+            <h1>📊 Análisis de Resultados Corporales</h1>
+            <div class="measurement-date">Fecha de medición: 19/04/2025</div>
+        </div>
+        
+        <!-- Datos principales -->
+        <div class="analysis-section">
+            <h2>🧍‍♂️ Datos principales</h2>
+            <ul>
+                <li><strong>Nombre:</strong> Leo Cruz</li>
+                <li><strong>Edad real:</strong> 22 años</li>
+                <li><strong>Edad metabólica:</strong> 44 años <span class="badge badge-danger">Metabolismo lento</span></li>
+                <li><strong>Peso actual:</strong> 122.10 kg</li>
+                <li><strong>IMC (BMI):</strong> 47.7 <span class="badge badge-danger">Obesidad severa</span></li>
+                <li><strong>Grasa corporal:</strong> 45.0% <span class="badge badge-danger">Muy alto</span></li>
+            </ul>
+        </div>
+        
+        <!-- Desglose detallado -->
+        <div class="analysis-section">
+            <h2>🔍 Desglose importante</h2>
+            <table class="metrics-table">
+                <thead>
+                    <tr>
+                        <th>Indicador</th>
+                        <th>Valor</th>
+                        <th>Interpretación</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Grasa corporal</strong></td>
+                        <td>45.0% (≈54.9 kg)</td>
+                        <td>Muy alto. Debería estar entre 15% y 20%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Masa muscular esquelética</strong></td>
+                        <td>25.9% (≈31.5 kg)</td>
+                        <td>Aceptable. Significa que tiene buena base muscular</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Músculo total</strong></td>
+                        <td>51.7% (≈63.2 kg)</td>
+                        <td>Excelente. Tiene un cuerpo fuerte bajo la grasa</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Grasa visceral</strong></td>
+                        <td>21.5</td>
+                        <td>Muy elevada. Lo ideal es que esté &lt;13</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Agua corporal</strong></td>
+                        <td>39.0%</td>
+                        <td>Bajo. Debería estar &gt;50%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Proteínas</strong></td>
+                        <td>12.7%</td>
+                        <td>Bajo. Debería rondar entre 16-18% para salud óptima</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- Interpretación -->
+        <div class="analysis-section">
+            <h2>🧠 ¿Qué significa esto?</h2>
+            <div class="recommendation-card">
+                <p><strong>Tienes buena masa muscular debajo de la grasa</strong>, lo cual es excelente. Tu cuerpo puede responder muy bien al ejercicio. Sin embargo:</p>
+                <ul>
+                    <li>La <strong>grasa corporal y visceral están peligrosamente altas</strong></li>
+                    <li>Tu <strong>edad metabólica de 44 años</strong> implica que tu cuerpo está funcionando como el de alguien mucho mayor, probablemente por sedentarismo y mala alimentación</li>
+                    <li>Necesitas <strong>más agua y proteínas</strong>. Eso ya puede hacer una gran diferencia</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Recomendaciones -->
+        <div class="analysis-section">
+            <h2>🎯 Plan de Acción</h2>
+            
+            <div class="recommendation-card">
+                <h3>1️⃣ Meta de peso a corto plazo (2-3 meses)</h3>
+                <p><strong>Bajar de 122.1 kg a 110 kg</strong> (perder ≈12 kg de grasa)</p>
+                <p>≈1 kg por semana - Objetivo realista y saludable</p>
+            </div>
+            
+            <div class="recommendation-card">
+                <h3>2️⃣ Objetivo intermedio</h3>
+                <p><strong>Alcanzar 85 kg con 20% grasa corporal</strong></p>
+                <p>Totalmente alcanzable en un año o menos con constancia</p>
+            </div>
+            
+            <div class="recommendation-card">
+                <h3>3️⃣ Dieta inicial</h3>
+                <ul>
+                    <li><strong>Alta en proteínas:</strong> pollo, huevo, atún, yogur griego</li>
+                    <li><strong>Baja en harinas blancas y azúcares</strong></li>
+                    <li><strong>Comer cada 3-4 horas</strong>, evitar ayunos extremos</li>
+                    <li><strong>3 litros de agua</strong> al día mínimo</li>
+                </ul>
+            </div>
+            
+            <div class="recommendation-card">
+                <h3>4️⃣ Rutina de ejercicio</h3>
+                <ul>
+                    <li><strong>Caminar 30-60 min</strong> al día inicialmente</li>
+                    <li><strong>Pesas 3x/semana</strong> + cardio 1-2 días</li>
+                    <li>Reincorporar <strong>BJJ/GYM</strong> cuando sea posible</li>
+                    <li>Luego pasar a <strong>BMX/skate</strong> una vez en mejores condiciones</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Resumen -->
+        <div class="summary-card">
+            <h2>✅ Resumen rápido</h2>
+            <p><strong>Leo tiene el potencial físico para mejorar mucho.</strong> Ya tiene músculo, pero está cubierto por grasa. Si se enfoca, puede verse atlético en un año.</p>
+            <p><strong>💡 Su mejor aliado ahora será la disciplina y un entorno que lo motive.</strong></p>
+        </div>
+    </div>
+</body>
+</html>

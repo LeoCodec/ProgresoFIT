@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Rutinas Mensuales</title>
+    
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        
+        .welcome-container {
+            background-color: #e8f5e9;
+            border-radius: 10px;
+            padding: 25px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            border-left: 5px solid #2e7d32;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2e7d32;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        
+        .welcome-message {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .progress-box {
+            background-color: white;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+            border: 1px solid #c8e6c9;
+        }
+        
+        .progress-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+        
+        .progress-label {
+            font-weight: bold;
+            color: #2e7d32;
+        }
+        
+        .progress-value {
+            font-weight: bold;
+        }
+        
+        .current-weight {
+            color: #d32f2f;
+        }
+        
+        .target-weight {
+            color: #2e7d32;
+        }
+        
+        .months-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 900px;
+            margin: 30px auto;
+        }
+        
+        .month-card {
+            background-color: #2e7d32;
+            color: white;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .month-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            background-color: #388e3c;
+        }
+        
+        .month-card a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em;
+            display: block;
+            height: 100%;
+        }
+        
+        .month-title {
+            margin-bottom: 5px;
+        }
+        
+        .month-duration {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+        
+        .current-month {
+            border: 3px solid #ffeb3b;
+        }
+
+        .back-button {
+            display: inline-block;
+            background-color: #2e7d32;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin: 20px 0;
+            transition: background-color 0.3s;
+        }
+        
+        .back-button:hover {
+            background-color: #388e3c;
+        }
+        
+        .back-to-home {
+            text-align: left;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Agrega esto en la parte superior de tu página, debajo del <body> -->
+    <div class="back-to-home">
+        <a href="../index.html" class="back-button">← Volver al Inicio</a>
+    </div>
+
+    <div class="welcome-container">
+        <h1>¡Hola Leo!</h1>
+        
+        <div class="progress-text">
+            <p>¡Aquí comienza mi gran transformación! Estos cuadros verdes representan mi mapa hacia los 85 kg, mes tras mes. Cada rutina mensual ha sido diseñada científicamente para quemar grasa, preservar músculo y optimizar mi rendimiento.</p>
+            
+            <p>Partiendo de mis 122 kg actuales, este plan considera mi condición física, mis necesidades metabólicas y mis horarios. Mayo 2025 marca el inicio de un nuevo estilo de vida donde el entrenamiento y la disciplina serán mis herramientas principales para esculpir el cuerpo que deseo.</p>
+        </div>
+        
+        <div class="progress-box">
+            <div class="progress-item">
+                <span class="progress-label">Peso actual:</span>
+                <span class="progress-value current-weight">122 kg</span>
+            </div>
+            <div class="progress-item">
+                <span class="progress-label">Objetivo:</span>
+                <span class="progress-value target-weight">85 kg</span>
+            </div>
+        </div>
+        
+        <p>Selecciona un mes para ver tu rutina detallada:</p>
+    </div>
+    
+    <div class="months-grid">
+        <!-- Mayo 2025 - Mes actual -->
+        <div class="month-card current-month">
+            <a href="Pages/RutinaMayo.html">
+                <div class="month-title">MAYO 2025</div>
+                <div class="month-duration">(4 semanas)</div>
+            </a>
+        </div>
+        
+        <!-- Junio 2025 -->
+        <div class="month-card">
+            <a href="Pages/RutinaJunio.html">
+                <div class="month-title">JUNIO 2025</div>
+                <div class="month-duration">(4 semanas)</div>
+            </a>
+        </div>
+        
+        <!-- Julio 2025 -->
+        <div class="month-card">
+            <a href="Pages/RutinaJulio.html">
+                <div class="month-title">JULIO 2025</div>
+                <div class="month-duration">(4 semanas)</div>
+            </a>
+        </div>
+        
+        <!-- Agosto 2025 -->
+        <div class="month-card">
+            <a href="Pages/RutinaAgosto.html">
+                <div class="month-title">AGOSTO 2025</div>
+                <div class="month-duration">(4 semanas)</div>
+            </a>
+        </div>
+        
+        <!-- Septiembre 2025 -->
+        <div class="month-card">
+            <a href="#">
+                <div class="month-title">SEPTIEMBRE 2025</div>
+                <div class="month-duration">(Próximamente)</div>
+            </a>
+        </div>
+        
+        <!-- Octubre 2025 -->
+        <div class="month-card">
+            <a href="#">
+                <div class="month-title">OCTUBRE 2025</div>
+                <div class="month-duration">(Próximamente)</div>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
