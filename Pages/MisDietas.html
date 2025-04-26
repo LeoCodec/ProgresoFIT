@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Dietas Mensuales</title>
+    
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        
+        .welcome-container {
+            background-color: #e8f5e9;
+            border-radius: 10px;
+            padding: 25px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            border-left: 5px solid #2e7d32;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2e7d32;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        
+        .welcome-message {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .progress-box {
+            background-color: white;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+            border: 1px solid #c8e6c9;
+        }
+        
+        .progress-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+        
+        .progress-label {
+            font-weight: bold;
+            color: #2e7d32;
+        }
+        
+        .progress-value {
+            font-weight: bold;
+        }
+        
+        .current-weight {
+            color: #d32f2f;
+        }
+        
+        .target-weight {
+            color: #2e7d32;
+        }
+        
+        .months-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 900px;
+            margin: 30px auto;
+        }
+        
+        .month-card {
+            background-color: #2e7d32;
+            color: white;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .month-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            background-color: #388e3c;
+        }
+        
+        .month-card a.month-link {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .month-title {
+            margin-bottom: 5px;
+        }
+        
+        .month-duration {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+        
+        .current-month {
+            border: 3px solid #ffeb3b;
+        }
+
+        .back-button {
+            display: inline-block;
+            background-color: #2e7d32;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin: 20px 0;
+            transition: background-color 0.3s;
+        }
+        
+        .back-button:hover {
+            background-color: #388e3c;
+        }
+        
+        .back-to-home {
+            text-align: left;
+            padding: 15px;
+        }
+        
+        .diet-icon {
+            font-size: 2em;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        /* Estilo para el botón mini dentro de la tarjeta */
+        .shopping-list-button-mini {
+            display: block;
+            margin: 15px auto 0;
+            padding: 8px 15px;
+            background-color: #2196F3;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.9em;
+            font-weight: bold;
+            text-align: center;
+            transition: all 0.3s ease;
+            border-left: 3px solid #0D47A1;
+            width: 90%;
+        }
+
+        .shopping-list-button-mini:hover {
+            background-color: #1976D2;
+            transform: translateY(-2px);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .shopping-list-button-mini::before {
+            content: "🛒";
+            margin-right: 8px;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="back-to-home">
+        <a href="../index.html" class="back-button">← Volver al Inicio</a>
+    </div>
+
+    <div class="welcome-container">
+        <h1>¡Hola Leo!</h1>
+        
+        <div class="progress-text">
+            <p>¡La nutrición es el 80% de mi transformación! Estas dietas mensuales han sido diseñadas científicamente para maximizar la quema de grasa, mantener mi masa muscular y optimizar mi energía.</p>
+            
+            <p>Cada plan alimenticio considera mis gustos personales, horarios y requerimientos nutricionales. Mayo 2025 marca el inicio de un nuevo estilo de vida donde la alimentación consciente será mi herramienta principal para alcanzar los 85 kg.</p>
+        </div>
+        
+        <div class="progress-box">
+            <div class="progress-item">
+                <span class="progress-label">Calorías diarias actuales:</span>
+                <span class="progress-value current-weight">2,200 kcal</span>
+            </div>
+            <div class="progress-item">
+                <span class="progress-label">Macronutrientes:</span>
+                <span class="progress-value target-weight">40% Prot - 30% Carb - 30% Grasa</span>
+            </div>
+        </div>
+        
+        <p>Selecciona un mes para ver tu plan nutricional detallado:</p>
+    </div>
+    
+    <div class="months-grid">
+        <!-- Mayo 2025 - Mes actual -->
+        <div class="month-card current-month">
+            <a href="Pages/DietaMayo.html" class="month-link">
+                <span class="diet-icon">🥗</span>
+                <div class="month-title">MAYO 2025</div>
+                <div class="month-duration">(Fase de inicio)</div>
+            </a>
+            <a href="/Pages/Pages/ListadeComprasMayo.html" class="shopping-list-button-mini">
+                Lista de Compras Mayo
+            </a>
+        </div>
+        
+        <!-- Junio 2025 -->
+        <div class="month-card">
+            <a href="Pages/DietaJunio.html" class="month-link">
+                <span class="diet-icon">🍳</span>
+                <div class="month-title">JUNIO 2025</div>
+                <div class="month-duration">(Fase de adaptación)</div>
+            </a>
+        </div>
+        
+        <!-- Julio 2025 -->
+        <div class="month-card">
+            <a href="Pages/DietaJulio.html" class="month-link">
+                <span class="diet-icon">🥩</span>
+                <div class="month-title">JULIO 2025</div>
+                <div class="month-duration">(Fase de definición)</div>
+            </a>
+        </div>
+        
+        <!-- Agosto 2025 -->
+        <div class="month-card">
+            <a href="Pages/DietaAgosto.html" class="month-link">
+                <span class="diet-icon">🍌</span>
+                <div class="month-title">AGOSTO 2025</div>
+                <div class="month-duration">(Fase de mantenimiento)</div>
+            </a>
+        </div>
+        
+        <!-- Septiembre 2025 -->
+        <div class="month-card">
+            <a href="#" class="month-link">
+                <span class="diet-icon">🥦</span>
+                <div class="month-title">SEPTIEMBRE 2025</div>
+                <div class="month-duration">(Próximamente)</div>
+            </a>
+        </div>
+        
+        <!-- Octubre 2025 -->
+        <div class="month-card">
+            <a href="#" class="month-link">
+                <span class="diet-icon">🍠</span>
+                <div class="month-title">OCTUBRE 2025</div>
+                <div class="month-duration">(Próximamente)</div>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
