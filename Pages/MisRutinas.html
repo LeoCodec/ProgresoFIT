@@ -6,201 +6,254 @@
     <title>Mis Rutinas Mensuales</title>
     
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f5f5f5;
-            margin: 0;
-            padding: 20px;
-            color: #333;
-        }
-        
-        .welcome-container {
-            background-color: #e8f5e9;
-            border-radius: 10px;
-            padding: 25px;
-            max-width: 700px;
-            margin: 0 auto 30px;
-            border-left: 5px solid #2e7d32;
-            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-        }
-        
-        h1 {
-            color: #2e7d32;
-            margin-top: 0;
-            margin-bottom: 10px;
-        }
-        
-        .welcome-message {
-            font-size: 1.1em;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-        
-        .progress-box {
-            background-color: white;
-            border-radius: 8px;
-            padding: 15px;
-            margin: 20px 0;
-            border: 1px solid #c8e6c9;
-        }
-        
-        .progress-item {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 8px;
-        }
-        
-        .progress-label {
-            font-weight: bold;
-            color: #2e7d32;
-        }
-        
-        .progress-value {
-            font-weight: bold;
-        }
-        
-        .current-weight {
-            color: #d32f2f;
-        }
-        
-        .target-weight {
-            color: #2e7d32;
-        }
-        
-        .months-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 20px;
-            max-width: 900px;
-            margin: 30px auto;
-        }
-        
-        .month-card {
-            background-color: #2e7d32;
-            color: white;
-            border-radius: 8px;
-            padding: 20px;
-            text-align: center;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        
-        .month-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-            background-color: #388e3c;
-        }
-        
-        .month-card a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.2em;
-            display: block;
-            height: 100%;
-        }
-        
-        .month-title {
-            margin-bottom: 5px;
-        }
-        
-        .month-duration {
-            font-size: 0.9em;
-            opacity: 0.9;
-        }
-        
-        .current-month {
-            border: 3px solid #ffeb3b;
-        }
-
-        .back-button {
-            display: inline-block;
-            background-color: #2e7d32;
-            color: white;
-            padding: 10px 15px;
-            border-radius: 5px;
-            text-decoration: none;
-            margin: 20px 0;
-            transition: background-color 0.3s;
-        }
-        
-        .back-button:hover {
-            background-color: #388e3c;
-        }
-        
-        .back-to-home {
-            text-align: left;
-            padding: 15px;
-        }
-            /* --- ESTILO GENERAL PARA EL PLAN DE ENTRENAMIENTO --- */
-            
-            .training-plan {
-              max-width: 900px;
-              margin: 40px auto;
+      /* --- ESTILOS GENERALES --- */
+      body {
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          background-color: #f5f5f5;
+          margin: 0;
+          padding: 20px;
+          color: #333;
+      }
+  
+      /* --- SECCIÓN DE BIENVENIDA --- */
+      .welcome-container {
+          background-color: #e8f5e9;
+          border-radius: 10px;
+          padding: 30px;
+          max-width: 700px;
+          margin: 0 auto 30px;
+          border-left: 5px solid #2e7d32;
+          box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      }
+  
+      h1 {
+          color: #2e7d32;
+          margin-top: 0;
+          margin-bottom: 10px;
+          font-size: 2.5em;
+      }
+  
+      .welcome-message {
+          font-size: 1.2em;
+          line-height: 1.7;
+          margin-bottom: 20px;
+      }
+  
+      /* --- PROGRESO DE PLAN DE ENTRENAMIENTO --- */
+      .progress-box {
+          background-color: white;
+          border-radius: 8px;
+          padding: 20px;
+          margin: 20px 0;
+          border: 1px solid #c8e6c9;
+          box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      }
+  
+      .progress-item {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 12px;
+      }
+  
+      .progress-label {
+          font-weight: bold;
+          color: #2e7d32;
+      }
+  
+      .progress-value {
+          font-weight: bold;
+      }
+  
+      .current-weight {
+          color: #d32f2f;
+      }
+  
+      .target-weight {
+          color: #2e7d32;
+      }
+  
+      /* --- GRILLA DE MESES (para un diseño de calendario más organizado) --- */
+      .months-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+          gap: 20px;
+          max-width: 1000px;
+          margin: 30px auto;
+      }
+  
+      .month-card {
+          background-color: #2e7d32;
+          color: white;
+          border-radius: 8px;
+          padding: 20px;
+          text-align: center;
+          transition: all 0.3s ease;
+          box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      }
+  
+      .month-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+          background-color: #388e3c;
+      }
+  
+      .month-card a {
+          color: white;
+          text-decoration: none;
+          font-weight: bold;
+          font-size: 1.3em;
+          display: block;
+          height: 100%;
+      }
+  
+      .month-title {
+          margin-bottom: 10px;
+          font-size: 1.5em;
+      }
+  
+      .month-duration {
+          font-size: 0.9em;
+          opacity: 0.9;
+      }
+  
+      .current-month {
+          border: 3px solid #ffeb3b;
+      }
+  
+      .back-button {
+          display: inline-block;
+          background-color: #2e7d32;
+          color: white;
+          padding: 12px 18px;
+          border-radius: 5px;
+          text-decoration: none;
+          margin: 20px 0;
+          transition: background-color 0.3s;
+      }
+  
+      .back-button:hover {
+          background-color: #388e3c;
+      }
+  
+      .back-to-home {
+          text-align: left;
+          padding: 15px;
+      }
+  
+      /* --- ESTILO PARA EL PLAN DE ENTRENAMIENTO --- */
+      .training-plan {
+          max-width: 900px;
+          margin: 40px auto;
+          padding: 30px;
+          background: #fafafa;
+          border-radius: 12px;
+          box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          color: #333;
+      }
+  
+      .training-plan h2 {
+          text-align: center;
+          color: #d92332;
+          font-size: 2.5em;
+          margin-bottom: 30px;
+      }
+  
+      .training-plan .week {
+          margin-bottom: 40px;
+      }
+  
+      .training-plan .week h3 {
+          background-color: #d92332;
+          color: #fff;
+          padding: 12px 20px;
+          border-radius: 8px;
+          font-size: 1.5em;
+          margin-bottom: 20px;
+      }
+  
+      .training-plan ul {
+          list-style-type: none;
+          padding-left: 0;
+      }
+  
+      .training-plan li {
+          background: #fff;
+          padding: 12px 20px;
+          margin-bottom: 10px;
+          border-left: 5px solid #d92332;
+          border-radius: 8px;
+          transition: background 0.3s;
+      }
+  
+      .training-plan li:hover {
+          background: #ffe5e5;
+      }
+  
+      .training-plan strong {
+          color: #d92332;
+          font-weight: bold;
+      }
+  
+      /* --- ESTILO ADAPTATIVO PARA MÓVILES --- */
+      @media (max-width: 600px) {
+          .training-plan {
               padding: 20px;
-              background: #fafafa;
-              border-radius: 12px;
-              box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-              font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-              color: #333;
-            }
-            
-            .training-plan h2 {
-              text-align: center;
-              color: #d92332;
-              font-size: 2em;
-              margin-bottom: 30px;
-            }
-            
-            .training-plan .week {
-              margin-bottom: 40px;
-            }
-            
-            .training-plan .week h3 {
-              background-color: #d92332;
-              color: #fff;
-              padding: 10px 20px;
-              border-radius: 8px;
-              font-size: 1.5em;
-              margin-bottom: 20px;
-            }
-            
-            .training-plan ul {
-              list-style-type: none;
-              padding-left: 0;
-            }
-            
-            .training-plan li {
-              background: #fff;
-              padding: 12px 20px;
-              margin-bottom: 10px;
-              border-left: 5px solid #d92332;
-              border-radius: 8px;
-              transition: background 0.3s;
-            }
-            
-            .training-plan li:hover {
-              background: #ffe5e5;
-            }
-            
-            .training-plan strong {
-              color: #d92332;
-              font-weight: bold;
-            }
-            
-            /* Opcional: hacer que en móvil se vea cómodo */
-            @media (max-width: 600px) {
-              .training-plan {
-                padding: 15px;
-              }
-              .training-plan h2 {
-                font-size: 1.5em;
-              }
-              .training-plan .week h3 {
-                font-size: 1.2em;
-              }
-            }           
-    </style>
+          }
+          .training-plan h2 {
+              font-size: 1.8em;
+          }
+          .training-plan .week h3 {
+              font-size: 1.3em;
+          }
+          .back-button {
+              padding: 8px 12px;
+          }
+      }
+  
+      .parent {
+          display: grid;
+          grid-template-columns: repeat(1, 1fr);
+          gap: 20px;
+          padding: 20px;
+      }
+  
+      .grid {
+          background-color: #f4f4f4;
+          border: 1px solid #ccc;
+          padding: 20px;
+          border-radius: 8px;
+      }
+  
+      .grid h3 {
+          text-align: center;
+          color: #333;
+      }
+  
+      .week {
+          margin-bottom: 20px;
+      }
+  
+      .week h4 {
+          color: #2a2a2a;
+          font-size: 1.3em;
+      }
+  
+      ul {
+          list-style-type: none;
+          padding-left: 0;
+      }
+  
+      li {
+          margin: 8px 0;
+      }
+  
+      strong {
+          font-weight: bold;
+          color: #007bff;
+      }
+  </style>
+  
 </head>
 <body>
     <!-- Agrega esto en la parte superior de tu página, debajo del <body> -->
@@ -209,7 +262,7 @@
     </div>
 
     <div class="welcome-container">
-        <h1>¡Hola Leo!</h1>
+        <h1>¡Hola aqui Leo Cruz!</h1>
         
         <div class="progress-text">
             <p>¡Aquí comienza mi gran transformación! Estos cuadros verdes representan mi mapa hacia los 85 kg, mes tras mes. Cada rutina mensual ha sido diseñada científicamente para quemar grasa, preservar músculo y optimizar mi rendimiento.</p>
@@ -231,65 +284,195 @@
         <p>Selecciona un mes para ver tu rutina detallada:</p>
     </div>
     
-    <!--Seccion de Plan enetreniento-->
+    <!-- Sección de Plan de Entrenamiento -->
     <div class="training-plan">
-        <h2> Estructura del Plan de Entrenamiento — Mayo, Junio y Julio 2025</h2>
-      
-        <!-- Semana 1 -->
-        <div class="week">
-          <h3>Semana 1 – Acondicionamiento y Base</h3>
-          <ul>
-            <li><strong>Lunes – Tren Superior (Pecho + Espalda):</strong> Ejercicios para trabajar la parte superior, con énfasis en fuerza general y técnica.</li>
-            <li><strong>Martes – Espalda + Bíceps + Core & Caminata:</strong> Enfoque en fortalecer la espalda, los bíceps y el core, con caminata ligera para cardio.</li>
-            <li><strong>Miércoles – Tren Inferior (Piernas + Glúteos):</strong> Mejora de fuerza en la base corporal.</li>
-            <li><strong>Jueves – Cardio + Core + Estabilidad:</strong> Cardio moderado y core para fortalecer el centro y equilibrio.</li>
-            <li><strong>Viernes – Full Body (Fuerza ligera):</strong> Trabajo completo con carga baja para mantener la actividad.</li>
-            <li><strong>Sábado – Tren Superior + Core + Hombros ✴️:</strong> Día intenso para la parte superior y hombros.</li>
-            <li><strong>Domingo – Descanso o recuperación activa:</strong> Caminata o estiramientos suaves.</li>
-          </ul>
+      <h2>Estructura del Plan de Entrenamiento — Mayo, Junio y Julio 2025</h2>
+
+      <div class="parent">
+        <!-- Grid para Mayo -->
+        <div class="grid" id="mayo">
+          <h3>Mayo 2025</h3>
+          
+          <!-- Semana 1 -->
+          <div class="week">
+            <h4>Semana 1 – Acondicionamiento y Base</h4>
+            <ul>
+              <li><strong>Lunes:</strong> Ejercicios para trabajar la parte superior.</li>
+              <li><strong>Martes:</strong> Espalda + Bíceps + Core.</li>
+              <li><strong>Miércoles:</strong> Tren Inferior (Piernas + Glúteos).</li>
+              <li><strong>Jueves:</strong> Cardio + Core + Estabilidad.</li>
+              <li><strong>Viernes:</strong> Full Body (Fuerza ligera).</li>
+              <li><strong>Sábado:</strong> Tren Superior + Core + Hombros ✴️.</li>
+              <li><strong>Domingo:</strong> Descanso o recuperación activa.</li>
+            </ul>
+          </div>
+
+          <!-- Semana 2 -->
+          <div class="week">
+            <h4>Semana 2 – Técnica + Resistencia Base</h4>
+            <ul>
+              <li><strong>Lunes:</strong> Tren Superior (Pecho + Espalda + Brazos).</li>
+              <li><strong>Martes:</strong> Core + Cardio largo.</li>
+              <li><strong>Miércoles:</strong> Tren Inferior (Piernas + Glúteos).</li>
+              <li><strong>Jueves:</strong> Core + HIIT.</li>
+              <li><strong>Viernes:</strong> Full Body Ligero.</li>
+              <li><strong>Sábado:</strong> Tren Superior completo + Core fuerte ✴️.</li>
+              <li><strong>Domingo:</strong> Descanso Activo.</li>
+            </ul>
+          </div>
+
+          <!-- Semana 3 -->
+          <div class="week">
+            <h4>Semana 3 – Técnica + Resistencia Base</h4>
+            <ul>
+              <li><strong>Lunes:</strong> Tren Superior (Pecho + Espalda + Brazos).</li>
+              <li><strong>Martes:</strong> Core + Cardio largo.</li>
+              <li><strong>Miércoles:</strong> Tren Inferior (Piernas + Glúteos).</li>
+              <li><strong>Jueves:</strong> Core + HIIT.</li>
+              <li><strong>Viernes:</strong> Full Body Ligero.</li>
+              <li><strong>Sábado:</strong> Tren Superior completo + Core fuerte ✴️.</li>
+              <li><strong>Domingo:</strong> Descanso o recuperación activa.</li>
+            </ul>
+          </div>
+
+          <!-- Semana 4 -->
+          <div class="week">
+            <h4>Semana 4 – Técnica + Resistencia Base</h4>
+            <ul>
+              <li><strong>Lunes:</strong> Tren Superior (Pecho + Espalda + Brazos).</li>
+              <li><strong>Martes:</strong> Espalda + Bíceps + Core & Caminata.</li>
+              <li><strong>Miércoles:</strong> Piernas + Glúteos + Finisher de Hombros ✴️.</li>
+              <li><strong>Jueves:</strong> Espalda + Brazos + Core & HIIT.</li>
+              <li><strong>Viernes:</strong> Full Body Ligero.</li>
+              <li><strong>Sábado:</strong> Tren Superior + Core + Hombros ✴️ (🔥 A full).</li>
+              <li><strong>Domingo:</strong> Descanso o recuperación activa.</li>
+            </ul>
+          </div>
         </div>
-      
-        <!-- Semana 2 -->
-        <div class="week">
-          <h3>Semana 2 – Técnica + Resistencia Base</h3>
-          <ul>
-            <li><strong>Lunes – Tren Superior (Pecho + Espalda + Brazos):</strong> Trabajo completo de la parte superior.</li>
-            <li><strong>Martes – Core + Cardio largo:</strong> Fortalecimiento del core + cardio extenso.</li>
-            <li><strong>Miércoles – Tren Inferior (Piernas + Glúteos):</strong> Enfoque en fuerza y técnica.</li>
-            <li><strong>Jueves – Core + HIIT:</strong> Alta intensidad con ejercicios abdominales.</li>
-            <li><strong>Viernes – Full Body Ligero:</strong> Sesión de cuerpo completo sin sobrecarga.</li>
-            <li><strong>Sábado – Tren Superior completo + Core fuerte ✴️:</strong> Trabajo global de tren superior con énfasis en hombros y core.</li>
-            <li><strong>Domingo – Descanso Activo:</strong> Caminata ligera o estiramientos.</li>
-          </ul>
+
+        <!-- Grid para Junio -->
+        <div class="grid" id="junio">
+          <h3>Junio 2025</h3>
+
+          <!-- Semana 1 -->
+          <div class="week">
+            <h4>Semana 1 – Acondicionamiento y Resistencia Base</h4>
+            <ul>
+              <li><strong>Lunes:</strong> Tren Superior (Pecho + Espalda)</li>
+              <li><strong>Martes:</strong> Espalda + Bíceps + Core + Caminata</li>
+              <li><strong>Miércoles:</strong> Tren Inferior (Piernas + Glúteos)</li>
+              <li><strong>Jueves:</strong> Cardio Moderado + Core + Estabilidad</li>
+              <li><strong>Viernes:</strong> Full Body Ligero</li>
+              <li><strong>Sábado:</strong> Tren Superior + Core + Hombros</li>
+              <li><strong>Domingo:</strong> Descanso o Recuperación Activa</li>
+            </ul>
+          </div>
+
+          <!-- Semana 2 -->
+          <div class="week">
+            <h4>Semana 2 – Progresión en Fuerza y Resistencia</h4>
+            <ul>
+              <li><strong>Lunes:</strong> Tren Superior (Pecho + Espalda + Brazos)</li>
+              <li><strong>Martes:</strong> Core + Cardio Extendido</li>
+              <li><strong>Miércoles:</strong> Tren Inferior (Piernas + Glúteos)</li>
+              <li><strong>Jueves:</strong> Core + HIIT</li>
+              <li><strong>Viernes:</strong> Full Body Moderado</li>
+              <li><strong>Sábado:</strong> Tren Superior + Core Fuerte</li>
+              <li><strong>Domingo:</strong> Descanso Activo</li>
+            </ul>
+          </div>
+
+          <!-- Semana 3 -->
+          <div class="week">
+            <h4>Semana 3 – Aumento de Intensidad y Fuerza</h4>
+            <ul>
+              <li><strong>Lunes:</strong> Tren Superior (Pecho + Espalda + Brazos)</li>
+              <li><strong>Martes:</strong> Core + Cardio Largo</li>
+              <li><strong>Miércoles:</strong> Tren Inferior (Piernas + Glúteos)</li>
+              <li><strong>Jueves:</strong> Core + HIIT</li>
+              <li><strong>Viernes:</strong> Full Body Ligero</li>
+              <li><strong>Sábado:</strong> Tren Superior Completo + Core Fuerte</li>
+              <li><strong>Domingo:</strong> Descanso o Recuperación Activa</li>
+            </ul>
+          </div>
+
+          <!-- Semana 4 -->
+          <div class="week">
+            <h4>Semana 4 – Consolidación y Resistencia Muscular</h4>
+            <ul>
+              <li><strong>Lunes:</strong> Tren Superior (Pecho + Espalda + Brazos)</li>
+              <li><strong>Martes:</strong> Espalda + Bíceps + Core + Caminata</li>
+              <li><strong>Miércoles:</strong> Piernas + Glúteos + Finisher de Hombros</li>
+              <li><strong>Jueves:</strong> Espalda + Brazos + Core + HIIT</li>
+              <li><strong>Viernes:</strong> Full Body Ligero</li>
+              <li><strong>Sábado:</strong> Tren Superior + Core + Hombros</li>
+              <li><strong>Domingo:</strong> Descanso o Recuperación Activa</li>
+            </ul>
+          </div>
         </div>
-      
-        <!-- Semana 3 -->
-        <div class="week">
-          <h3>Semana 3 – Técnica + Resistencia Base</h3>
-          <ul>
-            <li><strong>Lunes – Tren Superior (Pecho + Espalda + Brazos):</strong> Técnica y fuerza en parte superior.</li>
-            <li><strong>Martes – Core + Cardio largo:</strong> Trabajo abdominal e incremento de resistencia.</li>
-            <li><strong>Miércoles – Tren Inferior (Piernas + Glúteos):</strong> Aumento de carga en piernas con buena forma.</li>
-            <li><strong>Jueves – Core + HIIT:</strong> Cardio intenso + trabajo de core.</li>
-            <li><strong>Viernes – Full Body Ligero:</strong> Activación general ligera.</li>
-            <li><strong>Sábado – Tren Superior completo + Core fuerte ✴️:</strong> Enfoque en parte superior + hombros + core fuerte.</li>
-            <li><strong>Domingo – Descanso o recuperación activa:</strong> Estiramientos o paseo relajado.</li>
-          </ul>
+
+
+        <!-- Grid para Julio -->
+        <div class="grid" id="julio">
+          <h3>Julio 2025</h3>
+
+          <!-- Semana 1 -->
+          <div class="week">
+            <h4>Semana 1 – Progresión en Fuerza y Resistencia</h4>
+            <ul>
+              <li><strong>Lunes:</strong> Tren Superior (Pecho + Espalda)</li>
+              <li><strong>Martes:</strong> Espalda + Bíceps + Core + Caminata</li>
+              <li><strong>Miércoles:</strong> Tren Inferior (Piernas + Glúteos)</li>
+              <li><strong>Jueves:</strong> Cardio Moderado + Core + Estabilidad</li>
+              <li><strong>Viernes:</strong> Full Body Moderado</li>
+              <li><strong>Sábado:</strong> Tren Superior + Core + Hombros</li>
+              <li><strong>Domingo:</strong> Descanso o Recuperación Activa</li>
+            </ul>
+          </div>
+
+          <!-- Semana 2 -->
+          <div class="week">
+            <h4>Semana 2 – Aumento de Volumen y Progresión en Fuerza</h4>
+            <ul>
+              <li><strong>Lunes:</strong> Tren Superior (Pecho + Espalda + Brazos)</li>
+              <li><strong>Martes:</strong> Core + Cardio Extendido</li>
+              <li><strong>Miércoles:</strong> Tren Inferior (Piernas + Glúteos)</li>
+              <li><strong>Jueves:</strong> Core + HIIT</li>
+              <li><strong>Viernes:</strong> Full Body Moderado</li>
+              <li><strong>Sábado:</strong> Tren Superior Completo + Core Fuerte</li>
+              <li><strong>Domingo:</strong> Descanso o Recuperación Activa</li>
+            </ul>
+          </div>
+
+          <!-- Semana 3 -->
+          <div class="week">
+            <h4>Semana 3 – Intensificación en Fuerza y Cardio</h4>
+            <ul>
+              <li><strong>Lunes:</strong> Tren Superior (Pecho + Espalda + Brazos)</li>
+              <li><strong>Martes:</strong> Core + Cardio Extendido</li>
+              <li><strong>Miércoles:</strong> Tren Inferior (Piernas + Glúteos)</li>
+              <li><strong>Jueves:</strong> Core + HIIT</li>
+              <li><strong>Viernes:</strong> Full Body Moderado</li>
+              <li><strong>Sábado:</strong> Tren Superior + Core Fuerte</li>
+              <li><strong>Domingo:</strong> Descanso o Recuperación Activa</li>
+            </ul>
+          </div>
+
+          <!-- Semana 4 -->
+          <div class="week">
+            <h4>Semana 4 – Consolidación y Desafío Avanzado</h4>
+            <ul>
+              <li><strong>Lunes:</strong> Tren Superior (Pecho + Espalda + Brazos)</li>
+              <li><strong>Martes:</strong> Core + Cardio Largo</li>
+              <li><strong>Miércoles:</strong> Tren Inferior (Piernas + Glúteos)</li>
+              <li><strong>Jueves:</strong> Core + HIIT</li>
+              <li><strong>Viernes:</strong> Full Body Ligero</li>
+              <li><strong>Sábado:</strong> Tren Superior + Core Fuerte</li>
+              <li><strong>Domingo:</strong> Descanso o Recuperación Activa</li>
+            </ul>
+          </div>
         </div>
-      
-        <!-- Semana 4 -->
-        <div class="week">
-          <h3>Semana 4 – Técnica + Resistencia Base</h3>
-          <ul>
-            <li><strong>Lunes – Tren Superior (Pecho + Espalda + Brazos):</strong> Técnica y control en parte superior.</li>
-            <li><strong>Martes – Espalda + Bíceps + Core & Caminata:</strong> Fortalecimiento + cardio ligero.</li>
-            <li><strong>Miércoles – Piernas + Glúteos + Finisher de Hombros ✴️:</strong> Día fuerte de piernas, con cierre en hombros.</li>
-            <li><strong>Jueves – Espalda + Brazos + Core & HIIT:</strong> Potenciación de tren superior con sesión intensa.</li>
-            <li><strong>Viernes – Full Body Ligero:</strong> Trabajo global suave para mantener ritmo.</li>
-            <li><strong>Sábado – Tren Superior + Core + Hombros ✴️ (🔥 A full):</strong> Trabajo completo con intensidad alta.</li>
-            <li><strong>Domingo – Descanso o recuperación activa:</strong> Estiramientos o caminata ligera.</li>
-          </ul>
-        </div>
+          
         <p style="color: #1e90ff; font-size: 18px; line-height: 1.6;">
             Esta estructura de plan de entrenamiento es fundamental para retomar mi enfoque en el gimnasio, BJJ y ciclismo. A lo largo de los meses de mayo, junio y julio, el enfoque será progresivo para asegurar una base sólida en cada disciplina. Las fases están diseñadas de tal manera que:
           </p>
