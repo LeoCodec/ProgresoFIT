@@ -8,250 +8,334 @@
     <style>
       /* --- ESTILOS GENERALES --- */
       body {
-          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-          background-color: #f5f5f5;
-          margin: 0;
-          padding: 20px;
-          color: #333;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f5f5f5;
+        margin: 0;
+        padding: 20px;
+        color: #333;
       }
-  
+
       /* --- SECCIÓN DE BIENVENIDA --- */
       .welcome-container {
-          background-color: #e8f5e9;
-          border-radius: 10px;
-          padding: 30px;
-          max-width: 700px;
-          margin: 0 auto 30px;
-          border-left: 5px solid #2e7d32;
-          box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        background-color: #e8f5e9;
+        border-radius: 10px;
+        padding: 30px;
+        max-width: 700px;
+        margin: 0 auto 30px;
+        border-left: 5px solid #2e7d32;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.1);
       }
-  
+
       h1 {
-          color: #2e7d32;
-          margin-top: 0;
-          margin-bottom: 10px;
-          font-size: 2.5em;
+        color: #2e7d32;
+        margin-top: 0;
+        margin-bottom: 10px;
+        font-size: 2.5em;
       }
-  
+
       .welcome-message {
-          font-size: 1.2em;
-          line-height: 1.7;
-          margin-bottom: 20px;
+        font-size: 1.2em;
+        line-height: 1.7;
+        margin-bottom: 20px;
       }
-  
+
       /* --- PROGRESO DE PLAN DE ENTRENAMIENTO --- */
       .progress-box {
-          background-color: white;
-          border-radius: 8px;
-          padding: 20px;
-          margin: 20px 0;
-          border: 1px solid #c8e6c9;
-          box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        background-color: white;
+        border-radius: 8px;
+        padding: 20px;
+        margin: 20px 0;
+        border: 1px solid #c8e6c9;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       }
-  
+
       .progress-item {
-          display: flex;
-          justify-content: space-between;
-          margin-bottom: 12px;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 12px;
       }
-  
+
       .progress-label {
-          font-weight: bold;
-          color: #2e7d32;
+        font-weight: bold;
+        color: #2e7d32;
       }
-  
+
       .progress-value {
-          font-weight: bold;
+        font-weight: bold;
       }
-  
+
       .current-weight {
-          color: #d32f2f;
+        color: #d32f2f;
       }
-  
+
       .target-weight {
-          color: #2e7d32;
+        color: #2e7d32;
       }
-  
+
       /* --- GRILLA DE MESES (para un diseño de calendario más organizado) --- */
       .months-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-          gap: 20px;
-          max-width: 1000px;
-          margin: 30px auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 20px;
+        max-width: 1000px;
+        margin: 30px auto;
       }
-  
+
       .month-card {
-          background-color: #2e7d32;
-          color: white;
-          border-radius: 8px;
-          padding: 20px;
-          text-align: center;
-          transition: all 0.3s ease;
-          box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        background-color: #2e7d32;
+        color: white;
+        border-radius: 8px;
+        padding: 20px;
+        text-align: center;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
       }
-  
+
       .month-card:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-          background-color: #388e3c;
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        background-color: #388e3c;
       }
-  
+
       .month-card a {
-          color: white;
-          text-decoration: none;
-          font-weight: bold;
-          font-size: 1.3em;
-          display: block;
-          height: 100%;
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.3em;
+        display: block;
+        height: 100%;
       }
-  
+
       .month-title {
-          margin-bottom: 10px;
-          font-size: 1.5em;
+        margin-bottom: 10px;
+        font-size: 1.5em;
       }
-  
+
       .month-duration {
-          font-size: 0.9em;
-          opacity: 0.9;
+        font-size: 0.9em;
+        opacity: 0.9;
       }
-  
+
       .current-month {
-          border: 3px solid #ffeb3b;
+        border: 3px solid #ffeb3b;
       }
-  
+
       .back-button {
-          display: inline-block;
-          background-color: #2e7d32;
-          color: white;
-          padding: 12px 18px;
-          border-radius: 5px;
-          text-decoration: none;
-          margin: 20px 0;
-          transition: background-color 0.3s;
+        display: inline-block;
+        background-color: #2e7d32;
+        color: white;
+        padding: 12px 18px;
+        border-radius: 5px;
+        text-decoration: none;
+        margin: 20px 0;
+        transition: background-color 0.3s;
       }
-  
+
       .back-button:hover {
-          background-color: #388e3c;
+        background-color: #388e3c;
       }
-  
+
       .back-to-home {
-          text-align: left;
-          padding: 15px;
+        text-align: left;
+        padding: 15px;
       }
-  
+
       /* --- ESTILO PARA EL PLAN DE ENTRENAMIENTO --- */
       .training-plan {
-          max-width: 900px;
-          margin: 40px auto;
-          padding: 30px;
-          background: #fafafa;
-          border-radius: 12px;
-          box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-          color: #333;
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 30px;
+        background: #fafafa;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #333;
       }
-  
+
       .training-plan h2 {
-          text-align: center;
-          color: #d92332;
-          font-size: 2.5em;
-          margin-bottom: 30px;
+        text-align: center;
+        color: #d92332;
+        font-size: 2.5em;
+        margin-bottom: 30px;
       }
-  
+
       .training-plan .week {
-          margin-bottom: 40px;
+        margin-bottom: 40px;
       }
-  
+
       .training-plan .week h3 {
-          background-color: #d92332;
-          color: #fff;
-          padding: 12px 20px;
-          border-radius: 8px;
-          font-size: 1.5em;
-          margin-bottom: 20px;
+        background-color: #d92332;
+        color: #fff;
+        padding: 12px 20px;
+        border-radius: 8px;
+        font-size: 1.5em;
+        margin-bottom: 20px;
       }
-  
+
       .training-plan ul {
-          list-style-type: none;
-          padding-left: 0;
+        list-style-type: none;
+        padding-left: 0;
       }
-  
+
       .training-plan li {
-          background: #fff;
-          padding: 12px 20px;
-          margin-bottom: 10px;
-          border-left: 5px solid #d92332;
-          border-radius: 8px;
-          transition: background 0.3s;
+        background: #fff;
+        padding: 12px 20px;
+        margin-bottom: 10px;
+        border-left: 5px solid #d92332;
+        border-radius: 8px;
+        transition: background 0.3s;
       }
-  
+
       .training-plan li:hover {
-          background: #ffe5e5;
+        background: #ffe5e5;
       }
-  
+
       .training-plan strong {
-          color: #d92332;
-          font-weight: bold;
+        color: #d92332;
+        font-weight: bold;
       }
-  
+
       /* --- ESTILO ADAPTATIVO PARA MÓVILES --- */
       @media (max-width: 600px) {
-          .training-plan {
-              padding: 20px;
-          }
-          .training-plan h2 {
-              font-size: 1.8em;
-          }
-          .training-plan .week h3 {
-              font-size: 1.3em;
-          }
-          .back-button {
-              padding: 8px 12px;
-          }
+        .training-plan {
+            padding: 20px;
+        }
+        .training-plan h2 {
+            font-size: 1.8em;
+        }
+        .training-plan .week h3 {
+            font-size: 1.3em;
+        }
+        .back-button {
+            padding: 8px 12px;
+        }
       }
-  
+
       .parent {
-          display: grid;
-          grid-template-columns: repeat(1, 1fr);
-          gap: 20px;
-          padding: 20px;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+        padding: 20px;
       }
-  
+
       .grid {
-          background-color: #f4f4f4;
-          border: 1px solid #ccc;
-          padding: 20px;
-          border-radius: 8px;
+        background-color: #f4f4f4;
+        border: 1px solid #ccc;
+        padding: 20px;
+        border-radius: 8px;
       }
-  
+
       .grid h3 {
-          text-align: center;
-          color: #333;
+        text-align: center;
+        color: #333;
       }
-  
+
       .week {
-          margin-bottom: 20px;
+        margin-bottom: 20px;
       }
-  
+
       .week h4 {
-          color: #2a2a2a;
-          font-size: 1.3em;
+        color: #2a2a2a;
+        font-size: 1.3em;
       }
-  
+
       ul {
-          list-style-type: none;
-          padding-left: 0;
+        list-style-type: none;
+        padding-left: 0;
       }
-  
+
       li {
-          margin: 8px 0;
+        margin: 8px 0;
       }
-  
+
       strong {
-          font-weight: bold;
-          color: #007bff;
+        font-weight: bold;
+        color: #007bff;
       }
+
+      .description-block {
+        padding: 20px;
+        margin-top: 40px;
+        font-size: 18px;
+        line-height: 1.6;
+        color: #1e90ff;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 128, 0, 0.1);
+      }
+      
+      .fase {
+        padding: 15px 20px;
+        border-left: 6px solid;
+        margin-bottom: 20px;
+        border-radius: 6px;
+      }
+      
+      /* Fase 1 – Gimnasio */
+      .fase1 {
+        background-color: #e7fbe9; /* verde pastel */
+        border-color: #28a745;
+      }
+      
+      /* Fase 2 – BJJ */
+      .fase2 {
+        background-color: #fff5e6; /* naranja claro */
+        border-color: #ff9800;
+      }
+      
+      /* Fase 3 – Ciclismo */
+      .fase3 {
+        background-color: #e6f4ff; /* azul cielo suave */
+        border-color: #2196f3;
+      }
+      
+      .fase h4 {
+        margin-top: 0;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+      
+      .fase-resumen-final {
+        background-color: #ffeaea; /* rojo claro */
+        color: #c62828; /* rojo intenso */
+        font-size: 18px;
+        line-height: 1.6;
+        padding: 20px;
+        border-left: 6px solid #d32f2f;
+        border-radius: 8px;
+        margin-top: 30px;
+        font-weight: bold;
+      }
+      
+      .fase-resumen-final .fase-roja {
+        color: #b71c1c;
+        font-weight: bold;
+      }
+      
+      .fase-resumen-final .peso-meta {
+        color: #b71c1c;
+        font-weight: bold;
+        font-size: 20px;
+      }
+
+      .fase-opcional {
+        background-color: #f5f5f5; /* gris claro */
+        color: #424242; /* gris oscuro */
+        font-size: 17px;
+        line-height: 1.6;
+        padding: 20px;
+        border-left: 6px solid #9e9e9e;
+        border-radius: 8px;
+        margin-top: 20px;
+      }
+      
+      .fase-opcional h4 {
+        margin-top: 0;
+        font-size: 20px;
+        font-weight: bold;
+        color: #616161;
+      }
+            
+      
   </style>
   
 </head>
@@ -283,8 +367,189 @@
         
         <p>Selecciona un mes para ver tu rutina detallada:</p>
     </div>
+    <!-- Descripción del Plan de Entrenamiento -->
+    <div class="description-block">
+      <p>
+        Esta estructura de plan de entrenamiento es fundamental para retomar mi enfoque en el gimnasio, BJJ y ciclismo. A lo largo de los meses de mayo, junio y julio, el enfoque será progresivo para asegurar una base sólida en cada disciplina. Las fases están diseñadas de tal manera que:
+      </p>
     
-    <!-- Sección de Plan de Entrenamiento -->
+      <div class="fase fase1">
+        <h4>📘 Fase 1 – Mayo a Julio 2025 (Gimnasio)</h4>
+        <p>Recuperación de masa muscular, técnica y fuerza general. Un entrenamiento basado en acondicionamiento, resistencia y trabajo de la base muscular.</p>
+      </div>
+    
+      <div class="fase fase2">
+        <h4>🥋 Fase 2 – Agosto 2025 (BJJ)</h4>
+        <p>Tras la fase de acondicionamiento, retomaré el Brazilian Jiu-Jitsu con clases enfocadas en técnica, flexibilidad y resistencia durante los días martes, jueves y sábado.</p>
+      </div>
+    
+      <div class="fase fase3">
+        <h4>🚴‍♂️ Fase 3 – Post-100kg (Ciclismo)</h4>
+        <p>Al alcanzar los 100kg, reactivaré el ciclismo con rutas largas, manteniendo la resistencia cardiovascular y mejorando la fuerza de las piernas.</p>
+      </div>
+    
+      <div class="fase-resumen-final">
+        <p>
+          <strong>
+            Esta estructura me permitirá avanzar paso a paso, asegurando que mi cuerpo esté preparado para soportar el esfuerzo y rendimiento de cada disciplina de manera segura y eficiente.
+          </strong>
+        </p>
+        <p>
+          <strong>
+            Aunque la <span class="fase-roja">Fase 2</span> comienza en agosto, se toma como punto de partida el peso final alcanzado en julio. Ese será el peso inicial para agosto. A partir de ahí, se comienza con la estrategia de descenso hacia la meta para la fase 3 que son 100 kg.
+          </strong>
+        </p>
+        <p>
+          <strong>
+            En la <span class="fase-roja">Fase 3</span>, tras alcanzar los 100 kg, se reactivará el ciclismo como parte del proceso para llegar a un peso final estimado de <span class="peso-meta">85 kg</span>. Esta meta busca lograr un cuerpo muy definido, atlético y funcional, ideal para las disciplinas de gimnasio, Brazilian Jiu-Jitsu (BJJ) y ciclismo dominical.
+          </strong>
+        </p>
+        <div class="fase-opcional">
+          <h4>Fase 4 – Evolución Muscular (Opcional)</h4>
+          <p>
+            Si al finalizar la <strong>Fase 3</strong> aún no se alcanza el físico deseado, esta fase contempla una reducción adicional hasta los <strong>75 kg</strong> o menos, seguida de una etapa de <strong>recomposición corporal</strong>. Esto incluye un enfoque en ganancia de masa muscular limpia para alcanzar un cuerpo atlético y balanceado, ideal para el rendimiento óptimo en gimnasio, BJJ y ciclismo de largo recorrido.
+          </p>
+        </div>
+      </div>        
+    </div>      
+
+    <!-- Calendario de las semanas -->
+    <div style="font-family: Arial, sans-serif; margin: 20px;" >
+
+      <h2 style="text-align: center; color: #333; font-size: 24px;" >📅 Calendario de Plan de Entrenamiento Fase 1</h2>
+
+      <!-- Mayo 2025 -->
+      <div style="margin-bottom: 30px; padding: 10px; border: 1px solid #ccc; border-radius: 8px; background-color: #f9f9f9;">
+          <h3 style="text-align: center; color: #5A5A5A; font-size: 20px;">📌 Plan – Mayo 2025</h3>
+          <table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+              <thead>
+                  <tr style="background-color: #eee; text-align: left;">
+                      <th style="padding: 8px; border: 1px solid #ddd;">Semana Real</th>
+                      <th style="padding: 8px; border: 1px solid #ddd;">Fechas</th>
+                      <th style="padding: 8px; border: 1px solid #ddd;">Semana de tu Plan</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr style="background-color: #fff;">
+                      <td style="padding: 8px; border: 1px solid #ddd;">Semana 0</td>
+                      <td style="padding: 8px; border: 1px solid #ddd;">Jue 1 – Dom 4 mayo</td>
+                      <td style="padding: 8px; border: 1px solid #ddd;">Mini Semana 1 parcial (inicio de acondicionamiento)</td>
+                  </tr>
+                  <tr style="background-color: #f9f9f9;">
+                      <td style="padding: 8px; border: 1px solid #ddd;">Semana 1</td>
+                      <td style="padding: 8px; border: 1px solid #ddd;">Lun 5 – Dom 11 mayo</td>
+                      <td style="padding: 8px; border: 1px solid #ddd;">Semana 1 – Acondicionamiento y Base</td>
+                  </tr>
+                  <tr style="background-color: #fff;">
+                      <td style="padding: 8px; border: 1px solid #ddd;">Semana 2</td>
+                      <td style="padding: 8px; border: 1px solid #ddd;">Lun 12 – Dom 18 mayo</td>
+                      <td style="padding: 8px; border: 1px solid #ddd;">Semana 2 – Técnica + Resistencia Base</td>
+                  </tr>
+                  <tr style="background-color: #f9f9f9;">
+                      <td style="padding: 8px; border: 1px solid #ddd;">Semana 3</td>
+                      <td style="padding: 8px; border: 1px solid #ddd;">Lun 19 – Dom 25 mayo</td>
+                      <td style="padding: 8px; border: 1px solid #ddd;">Semana 3 – Técnica + Resistencia Base</td>
+                  </tr>
+                  <tr style="background-color: #fff;">
+                      <td style="padding: 8px; border: 1px solid #ddd;">Semana 4</td>
+                      <td style="padding: 8px; border: 1px solid #ddd;">Lun 26 – Sáb 31 mayo</td>
+                      <td style="padding: 8px; border: 1px solid #ddd;">Semana 4 – Técnica + Resistencia Base (ajustada)</td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+
+      <!-- Junio 2025 -->
+      <div style="margin-bottom: 30px; padding: 10px; border: 1px solid #ccc; border-radius: 8px; background-color: #f9f9f9;">
+          <h3 style="text-align: center; color: #5A5A5A; font-size: 20px;">📌 Plan – Junio 2025</h3>
+          <table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+              <thead>
+                  <tr style="background-color: #eee; text-align: left;">
+                      <th style="padding: 8px; border: 1px solid #ddd;">Semana Real</th>
+                      <th style="padding: 8px; border: 1px solid #ddd;">Fechas</th>
+                      <th style="padding: 8px; border: 1px solid #ddd;">Semana de tu Plan</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr style="background-color: #fff;">
+                      <td style="padding: 8px; border: 1px solid #ddd;">Semana 5</td>
+                      <td style="padding: 8px; border: 1px solid #ddd;">Dom 1 junio</td>
+                      <td style="padding: 8px; border: 1px solid #ddd;">Descanso o transición ligera</td>
+                  </tr>
+                  <tr style="background-color: #f9f9f9;">
+                      <td style="padding: 8px; border: 1px solid #ddd;">Semana 6</td>
+                      <td style="padding: 8px; border: 1px solid #ddd;">Lun 2 – Dom 8 junio</td>
+                      <td style="padding: 8px; border: 1px solid #ddd;">Semana 1 – Acondicionamiento + Resistencia Base</td>
+                  </tr>
+                  <tr style="background-color: #fff;">
+                      <td style="padding: 8px; border: 1px solid #ddd;">Semana 7</td>
+                      <td style="padding: 8px; border: 1px solid #ddd;">Lun 9 – Dom 15 junio</td>
+                      <td style="padding: 8px; border: 1px solid #ddd;">Semana 2 – Progresión en Fuerza y Resistencia</td>
+                  </tr>
+                  <tr style="background-color: #f9f9f9;">
+                      <td style="padding: 8px; border: 1px solid #ddd;">Semana 8</td>
+                      <td style="padding: 8px; border: 1px solid #ddd;">Lun 16 – Dom 22 junio</td>
+                      <td style="padding: 8px; border: 1px solid #ddd;">Semana 3 – Aumento de Intensidad y Fuerza</td>
+                  </tr>
+                  <tr style="background-color: #fff;">
+                      <td style="padding: 8px; border: 1px solid #ddd;">Semana 9</td>
+                      <td style="padding: 8px; border: 1px solid #ddd;">Lun 23 – Dom 29 junio</td>
+                      <td style="padding: 8px; border: 1px solid #ddd;">Semana 4 – Consolidación y Resistencia Muscular</td>
+                  </tr>
+                  <tr style="background-color: #f9f9f9;">
+                      <td style="padding: 8px; border: 1px solid #ddd;">Semana 10</td>
+                      <td style="padding: 8px; border: 1px solid #ddd;">Lun 30 junio</td>
+                      <td style="padding: 8px; border: 1px solid #ddd;">Día libre o movilidad ligera (puente hacia julio)</td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+
+      <!-- Julio 2025 -->
+      <div style="margin-bottom: 30px; padding: 10px; border: 1px solid #ccc; border-radius: 8px; background-color: #f9f9f9;">
+          <h3 style="text-align: center; color: #5A5A5A; font-size: 20px;">📌 Plan – Julio 2025</h3>
+          <table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+              <thead>
+                  <tr style="background-color: #eee; text-align: left;">
+                      <th style="padding: 8px; border: 1px solid #ddd;">Semana Real</th>
+                      <th style="padding: 8px; border: 1px solid #ddd;">Fechas</th>
+                      <th style="padding: 8px; border: 1px solid #ddd;">Semana de tu Plan</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr style="background-color: #fff;">
+                      <td style="padding: 8px; border: 1px solid #ddd;">Semana 11</td>
+                      <td style="padding: 8px; border: 1px solid #ddd;">Mar 1 – Dom 6 julio</td>
+                      <td style="padding: 8px; border: 1px solid #ddd;">Descarga / sesiones sueltas / recuperación activa</td>
+                  </tr>
+                  <tr style="background-color: #f9f9f9;">
+                      <td style="padding: 8px; border: 1px solid #ddd;">Semana 12</td>
+                      <td style="padding: 8px; border: 1px solid #ddd;">Lun 7 – Dom 13 julio</td>
+                      <td style="padding: 8px; border: 1px solid #ddd;">Semana 1 – Progresión en Fuerza y Resistencia</td>
+                  </tr>
+                  <tr style="background-color: #fff;">
+                      <td style="padding: 8px; border: 1px solid #ddd;">Semana 13</td>
+                      <td style="padding: 8px; border: 1px solid #ddd;">Lun 14 – Dom 20 julio</td>
+                      <td style="padding: 8px; border: 1px solid #ddd;">Semana 2 – Aumento de Volumen y Fuerza</td>
+                  </tr>
+                  <tr style="background-color: #f9f9f9;">
+                      <td style="padding: 8px; border: 1px solid #ddd;">Semana 14</td>
+                      <td style="padding: 8px; border: 1px solid #ddd;">Lun 21 – Dom 27 julio</td>
+                      <td style="padding: 8px; border: 1px solid #ddd;">Semana 3 – Intensificación en Fuerza y Cardio</td>
+                  </tr>
+                  <tr style="background-color: #fff;">
+                      <td style="padding: 8px; border: 1px solid #ddd;">Semana 15</td>
+                      <td style="padding: 8px; border: 1px solid #ddd;">Lun 28 – Jue 31 julio</td>
+                      <td style="padding: 8px; border: 1px solid #ddd;">Semana 4 – Consolidación y Desafío Avanzado (ajustada)</td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+
+      
+    </div>
+
+
     <div class="training-plan">
       <h2>Estructura del Plan de Entrenamiento — Mayo, Junio y Julio 2025</h2>
 
@@ -292,7 +557,25 @@
         <!-- Grid para Mayo -->
         <div class="grid" id="mayo">
           <h3>Mayo 2025</h3>
-          
+          <!-- Semana 0 -->
+          <div class="week">
+            <h4>Semana 0 – Mini Semana de Acondicionamiento</h4>
+            <ul>
+              <li><strong>Jueves:</strong> Pecho + Espalda + Brazos + Core + Finisher de Hombros (Deltoides Anterior).</li>
+              <li><strong>Viernes:</strong> Piernas + Glúteos + Core + Finisher de Hombros (Deltoides Medial) + Caminata.</li>
+              <li><strong>Sábado:</strong> Full Body (Pecho + Bíceps + Tríceps + Glúteos + Abdominales) + Finisher de Hombros Completo + Caminata.</li>
+              <li><strong>Domingo:</strong> Descanso o recuperación activa (movilidad, estiramientos y caminata ligera).</li>
+            </ul>
+          </div>
+
+          <!-- Cuadro de Mayo 2025 -->
+          <div class="month-card current-month">
+            <a href="Pages/RutinaMinisemanal0.html"> 
+              <div class="month-title">Mini Semanal 2025</div>
+              <div class="month-duration">3 días</div>
+            </a>
+          </div>
+
           <!-- Semana 1 -->
           <div class="week">
             <h4>Semana 1 – Acondicionamiento y Base</h4>
@@ -348,7 +631,14 @@
               <li><strong>Domingo:</strong> Descanso o recuperación activa.</li>
             </ul>
           </div>
-        </div>
+
+          <!-- Cuadro Mayo 2025 -->
+          <div class="month-card current-month">
+            <a href="Pages/RutinaMayo.html">
+              <div class="month-title">MAYO 2025</div>
+              <div class="month-duration">(4 semanas)</div>
+            </a>
+          </div>
 
         <!-- Grid para Junio -->
         <div class="grid" id="junio">
@@ -409,12 +699,40 @@
               <li><strong>Domingo:</strong> Descanso o Recuperación Activa</li>
             </ul>
           </div>
-        </div>
+
+          <!-- Junio 2025 -->
+          <div class="month-card">
+            <a href="Pages/RutinaJunio.html">
+              <div class="month-title">JUNIO 2025</div>
+              <div class="month-duration">(4 semanas)</div>
+            </a>
+          </div>
+
 
 
         <!-- Grid para Julio -->
         <div class="grid" id="julio">
           <h3>Julio 2025</h3>
+          <!-- Semana 0: Descarga -->
+          <div class="week">
+            <h4>📅 Semana 0 – Estructura semanal de descarga (Lunes a Sábado con hombros, Domingo libre)</h4>
+            <ul>
+              <li><strong>Lunes:</strong> Tren Superior (Pecho + Espalda + Brazos) + Finisher de Hombros (5 ejercicios)</li>
+              <li><strong>Martes:</strong> Brazos + Core + Cardio ligero (sin finisher de hombros, opcional)</li>
+              <li><strong>Miércoles:</strong> Tren Inferior completo (Glúteos + Cuádriceps + Isquios + Pantorrillas) + Finisher de Hombros (5 ejercicios)</li>
+              <li><strong>Jueves:</strong> Espalda + Bíceps + Core + Cardio (sin finisher de hombros, opcional)</li>
+              <li><strong>Viernes:</strong> Full Body Suave (ligero) + Finisher de Hombros (2 ejercicios)</li>
+              <li><strong>Sábado:</strong> Full Body intenso (Piernas + Pecho + Espalda) + Finisher de Hombros (5 ejercicios)</li>
+              <li><strong>Domingo:</strong> Descanso o recuperación activa (estiramientos, movilidad, caminata ligera)</li>
+            </ul>
+            <!-- Semana Descarga Julio 2025 -->
+            <div class="month-card">
+              <a href="Pages/RutinaSemanaDescargaJulio.html">
+                <div class="month-title"> SEMANA DESCARGA – JULIO</div>
+                <div class="month-duration">(Recuperación Activa)</div>
+              </a>
+            </div>
+          </div>
 
           <!-- Semana 1 -->
           <div class="week">
@@ -429,6 +747,7 @@
               <li><strong>Domingo:</strong> Descanso o Recuperación Activa</li>
             </ul>
           </div>
+
 
           <!-- Semana 2 -->
           <div class="week">
@@ -471,74 +790,643 @@
               <li><strong>Domingo:</strong> Descanso o Recuperación Activa</li>
             </ul>
           </div>
-        </div>
-          
-        <p style="color: #1e90ff; font-size: 18px; line-height: 1.6;">
-            Esta estructura de plan de entrenamiento es fundamental para retomar mi enfoque en el gimnasio, BJJ y ciclismo. A lo largo de los meses de mayo, junio y julio, el enfoque será progresivo para asegurar una base sólida en cada disciplina. Las fases están diseñadas de tal manera que:
-          </p>
-          
-          <ul style="color: #1e90ff; font-size: 18px; line-height: 1.6; margin-left: 20px;">
-            <li><strong>May–Julio 2025 (Gimnasio):</strong> Recuperación de masa muscular, técnica y fuerza general. Un entrenamiento basado en acondicionamiento, resistencia y trabajo de la base muscular.</li>
-            <li><strong>Agosto 2025 (BJJ):</strong> Tras la fase de acondicionamiento, retomaré el Brazilian Jiu-Jitsu con clases enfocadas en técnica, flexibilidad y resistencia durante los días martes, jueves y sábado.</li>
-            <li><strong>Post-100kg (Ciclismo):</strong> Al alcanzar los 100kg, reactivaré el ciclismo con rutas largas, manteniendo la resistencia cardiovascular y mejorando la fuerza de las piernas.</li>
-          </ul>
-          
-          <p style="color: #1e90ff; font-size: 18px; line-height: 1.6;">
-            Esta estructura me permitirá avanzar paso a paso, asegurando que mi cuerpo esté preparado para soportar el esfuerzo y rendimiento de cada disciplina de manera segura y eficiente.
-          </p>
-          
-      </div>
-      
-      <!--Meses-->
 
-    <div class="months-grid">
-        <!-- Mayo 2025 - Mes actual -->
-        <div class="month-card current-month">
-            <a href="Pages/RutinaMayo.html">
-                <div class="month-title">MAYO 2025</div>
-                <div class="month-duration">(4 semanas)</div>
-            </a>
-        </div>
-        
-        <!-- Junio 2025 -->
-        <div class="month-card">
-            <a href="Pages/RutinaJunio.html">
-                <div class="month-title">JUNIO 2025</div>
-                <div class="month-duration">(4 semanas)</div>
-            </a>
-        </div>
-        
-        <!-- Julio 2025 -->
-        <div class="month-card">
+          <!-- Julio 2025 -->
+          <div class="month-card">
             <a href="Pages/RutinaJulio.html">
-                <div class="month-title">JULIO 2025</div>
-                <div class="month-duration">(4 semanas)</div>
+              <div class="month-title">JULIO 2025</div>
+              <div class="month-duration">(4 semanas)</div>
             </a>
+          </div>        
+      </div>
+    </div>
+    <div>
+    <!--Inicia Fase 2 aqui-->
+        <!-- Calendario Fase 2 -->
+        <div style="font-family: Arial, sans-serif; margin: 20px;">
+
+          <h2 style="text-align: center; color: #333; font-size: 24px;">📅 Calendario de Plan de Entrenamiento Fase 2</h2>
+
+          <!-- 🟧 Agosto 2025 -->
+          <div style="margin-bottom: 30px; padding: 10px; border: 1px solid #ccc; border-radius: 8px; background-color: #f9f9f9;">
+            <h3 style="text-align: center; color: #5A5A5A; font-size: 20px;">📌 Plan – Agosto 2025</h3>
+            <table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+              <thead>
+                <tr style="background-color: #eee; text-align: left;">
+                  <th style="padding: 8px; border: 1px solid #ddd;">Semana Real</th>
+                  <th style="padding: 8px; border: 1px solid #ddd;">Fechas</th>
+                  <th style="padding: 8px; border: 1px solid #ddd;">Semana de tu Plan</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="padding: 8px; border: 1px solid #ddd;">Semana 16</td>
+                  <td style="padding: 8px; border: 1px solid #ddd;">Vie 1 – Dom 3 ago</td>
+                  <td style="padding: 8px; border: 1px solid #ddd;">Inicio Fase 2 – Semana de descarga (Ajuste + Reintroducción)</td>
+                </tr>
+                <tr style="background-color: #f9f9f9;">
+                  <td>Semana 17</td>
+                  <td>Lun 4 – Dom 10 ago</td>
+                  <td>Semana 1 – Técnica + Volumen Base</td>
+                </tr>
+                <tr>
+                  <td>Semana 18</td>
+                  <td>Lun 11 – Dom 17 ago</td>
+                  <td>Semana 2 – Progresión Controlada</td>
+                </tr>
+                <tr style="background-color: #f9f9f9;">
+                  <td>Semana 19</td>
+                  <td>Lun 18 – Dom 24 ago</td>
+                  <td>Semana 3 – Intensidad + BJJ Adaptado</td>
+                </tr>
+                <tr>
+                  <td>Semana 20</td>
+                  <td>Lun 25 – Sáb 31 ago</td>
+                  <td>Semana 4 – Consolidación + Fatiga</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- 🟨 Septiembre 2025 -->
+          <div style="margin-bottom: 30px; padding: 10px; border: 1px solid #ccc; border-radius: 8px; background-color: #f9f9f9;">
+            <h3 style="text-align: center; color: #5A5A5A; font-size: 20px;">📌 Plan – Septiembre 2025</h3>
+            <table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+              <thead>
+                <tr style="background-color: #eee;">
+                  <th style="padding: 8px; border: 1px solid #ddd;">Semana Real</th>
+                  <th style="padding: 8px; border: 1px solid #ddd;">Fechas</th>
+                  <th style="padding: 8px; border: 1px solid #ddd;">Semana de tu Plan</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Semana 21</td>
+                  <td>Dom 1 sep</td>
+                  <td>Semana de descarga (Transición Ligera)</td>
+                </tr>
+                <tr style="background-color: #f9f9f9;">
+                  <td>Semana 22</td>
+                  <td>Lun 2 – Dom 8 sep</td>
+                  <td>Semana 5 – Volumen + Cardio</td>
+                </tr>
+                <tr>
+                  <td>Semana 23</td>
+                  <td>Lun 9 – Dom 15 sep</td>
+                  <td>Semana 6 – Densidad y Técnica</td>
+                </tr>
+                <tr style="background-color: #f9f9f9;">
+                  <td>Semana 24</td>
+                  <td>Lun 16 – Dom 22 sep</td>
+                  <td>Semana 7 – Alta Intensidad + Control</td>
+                </tr>
+                <tr>
+                  <td>Semana 25</td>
+                  <td>Lun 23 – Lun 30 sep</td>
+                  <td>Semana 8 – Consolidación Base</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- 🟩 Octubre 2025 -->
+          <div style="margin-bottom: 30px; padding: 10px; border: 1px solid #ccc; border-radius: 8px; background-color: #f9f9f9;">
+            <h3 style="text-align: center; color: #5A5A5A; font-size: 20px;">📌 Plan – Octubre 2025</h3>
+            <table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+              <thead>
+                <tr style="background-color: #eee;">
+                  <th style="padding: 8px; border: 1px solid #ddd;">Semana Real</th>
+                  <th style="padding: 8px; border: 1px solid #ddd;">Fechas</th>
+                  <th style="padding: 8px; border: 1px solid #ddd;">Semana de tu Plan</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Semana 26</td>
+                  <td>Mar 1 – Dom 5 oct</td>
+                  <td>Semana de descarga (Descarga Estratégica)</td>
+                </tr>
+                <tr style="background-color: #f9f9f9;">
+                  <td>Semana 27</td>
+                  <td>Lun 6 – Dom 12 oct</td>
+                  <td>Semana 9 – Reimpulso Metabólico</td>
+                </tr>
+                <tr>
+                  <td>Semana 28</td>
+                  <td>Lun 13 – Dom 19 oct</td>
+                  <td>Semana 10 – Máxima Carga Controlada</td>
+                </tr>
+                <tr style="background-color: #f9f9f9;">
+                  <td>Semana 29</td>
+                  <td>Lun 20 – Dom 26 oct</td>
+                  <td>Semana 11 – Consolidación Técnica</td>
+                </tr>
+                <tr>
+                  <td>Semana 30</td>
+                  <td>Lun 27 – Jue 31 oct</td>
+                  <td>Semana 12 – Pre-Ajuste Noviembre</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- 🟥 Noviembre 2025 -->
+          <div style="margin-bottom: 30px; padding: 10px; border: 1px solid #ccc; border-radius: 8px; background-color: #f9f9f9;">
+            <h3 style="text-align: center; color: #5A5A5A; font-size: 20px;">📌 Plan – Noviembre 2025</h3>
+            <table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+              <thead>
+                <tr style="background-color: #eee;">
+                  <th style="padding: 8px; border: 1px solid #ddd;">Semana Real</th>
+                  <th style="padding: 8px; border: 1px solid #ddd;">Fechas</th>
+                  <th style="padding: 8px; border: 1px solid #ddd;">Semana de tu Plan</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Semana 31</td>
+                  <td>Vie 1 – Dom 2 nov</td>
+                  <td>Semana de descarga (Activación Ligera)</td>
+                </tr>
+                <tr style="background-color: #f9f9f9;">
+                  <td>Semana 32</td>
+                  <td>Lun 3 – Dom 9 nov</td>
+                  <td>Semana 13 – Sprint Final Parte 1</td>
+                </tr>
+                <tr>
+                  <td>Semana 33</td>
+                  <td>Lun 10 – Dom 16 nov</td>
+                  <td>Semana 14 – Sprint Final Parte 2</td>
+                </tr>
+                <tr style="background-color: #f9f9f9;">
+                  <td>Semana 34</td>
+                  <td>Lun 17 – Dom 23 nov</td>
+                  <td>Semana 15 – Desafío y Control de Peso</td>
+                </tr>
+                <tr>
+                  <td>Semana 35</td>
+                  <td>Lun 24 – Sáb 30 nov</td>
+                  <td>Semana 16 – Verificación Final (peso objetivo)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- ⚪ Diciembre 2025 (Extensión Opcional) -->
+          <div style="margin-bottom: 30px; padding: 10px; border: 1px solid #ccc; border-radius: 8px; background-color: #f9f9f9;">
+            <h3 style="text-align: center; color: #5A5A5A; font-size: 20px;">📌 ¿Extensión en Diciembre? (Solo si no se alcanza el objetivo)</h3>
+            <table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+              <thead>
+                <tr style="background-color: #eee;">
+                  <th style="padding: 8px; border: 1px solid #ddd;">Semana Real</th>
+                  <th style="padding: 8px; border: 1px solid #ddd;">Fechas</th>
+                  <th style="padding: 8px; border: 1px solid #ddd;">Proyección</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Semana 36</td>
+                  <td>Dom 1 dic</td>
+                  <td>Semana de descarga (Evaluación y Ajuste)</td>
+                </tr>
+                <tr style="background-color: #f9f9f9;">
+                  <td>Semana 37</td>
+                  <td>Lun 2 – Dom 8 dic</td>
+                  <td>Semana Extra 1 – Recorte Estratégico</td>
+                </tr>
+                <tr>
+                  <td>Semana 38</td>
+                  <td>Lun 9 – Dom 15 dic</td>
+                  <td>Semana Extra 2 – Alta Eficiencia</td>
+                </tr>
+                <tr style="background-color: #f9f9f9;">
+                  <td>Semana 39</td>
+                  <td>Lun 16 – Dom 22 dic</td>
+                  <td>Semana Extra 3 – Cierre Metabólico</td>
+                </tr>
+                <tr>
+                  <td>Semana 40</td>
+                  <td>Lun 23 – Mar 31 dic</td>
+                  <td>Semana Extra 4 – Descarga Final</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
         </div>
-        
-        <!-- Agosto 2025 -->
-        <div class="month-card">
-            <a href="Pages/RutinaAgosto.html">
+  
+          <!-- Grid para Agosto -->
+          <div class="grid" id="agosto">
+            <h3>AGOSTO 2025</h3>
+
+            <!-- Semana 16 -->
+            <div class="week">
+              <h4>📅 Semana 16 – Inicio Fase 2 – Semana de descarga (Ajuste + Reintroducción)</h4>
+              <ul>
+                <li><strong>Lunes:</strong> Gym (Tren Superior Ligero – Pecho + Espalda) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Martes:</strong> BJJ + Gym (Brazos + Core Ligero) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Miércoles:</strong> Gym (Tren Inferior Ligero – Glúteos + Cuádriceps) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Jueves:</strong> BJJ + Gym (Espalda + Core Funcional) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Viernes:</strong> Gym (Full Body Técnico Suave) + Finisher de Hombros (3 ej.)</li>
+                <li><strong>Sábado:</strong> BJJ</li>
+                <li><strong>Domingo:</strong> Recuperación activa (estiramientos, movilidad, caminata)</li>
+              </ul>
+            </div>
+
+            <!-- Semana 17 -->
+            <div class="week">
+              <h4>📅 Semana 17 – Semana 1 – Técnica + Volumen Base</h4>
+              <ul>
+                <li><strong>Lunes:</strong> Gym (Tren Superior – Pecho + Espalda + Tríceps) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Martes:</strong> BJJ + Gym (Espalda + Bíceps) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Miércoles:</strong> Gym (Tren Inferior – Cuádriceps + Isquios + Glúteos) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Jueves:</strong> BJJ + Gym (Core + Estabilidad + Brazos) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Viernes:</strong> Gym (Full Body – Énfasis en espalda y piernas) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Sábado:</strong> BJJ</li>
+                <li><strong>Domingo:</strong> Recuperación activa</li>
+              </ul>
+            </div>
+
+            <!-- Semana 18 -->
+            <div class="week">
+              <h4>📅 Semana 18 – Semana 2 – Progresión Controlada</h4>
+              <ul>
+                <li><strong>Lunes:</strong> Gym (Tren Superior – Pecho + Espalda + Bíceps) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Martes:</strong> BJJ + Gym (Tríceps + Core Funcional) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Miércoles:</strong> Gym (Tren Inferior – Glúteos + Isquios + Cuádriceps) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Jueves:</strong> BJJ + Gym (Espalda + Core Dinámico) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Viernes:</strong> Gym (Full Body – Piernas + Brazos + Core Explosivo) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Sábado:</strong> BJJ</li>
+                <li><strong>Domingo:</strong> Recuperación activa</li>
+              </ul>
+            </div>
+
+            <!-- Semana 19 -->
+            <div class="week">
+              <h4>📅 Semana 19 – Semana 3 – Intensidad + BJJ Adaptado</h4>
+              <ul>
+                <li><strong>Lunes:</strong> Gym (Tren Superior – Espalda + Hombros + Tríceps) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Martes:</strong> BJJ + Gym (Core + Estabilidad) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Miércoles:</strong> Gym (Tren Inferior – Fuerza Glútea + Cuádriceps) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Jueves:</strong> BJJ + Gym (Pecho + Bíceps) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Viernes:</strong> Gym (Full Body Fuerte – Espalda + Core Explosivo) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Sábado:</strong> BJJ</li>
+                <li><strong>Domingo:</strong> Recuperación activa</li>
+              </ul>
+            </div>
+
+            <!-- Semana 20 -->
+            <div class="week">
+              <h4>📅 Semana 20 – Semana 4 – Consolidación + Fatiga</h4>
+              <ul>
+                <li><strong>Lunes:</strong> Gym (Tren Superior – Pecho + Espalda + Bíceps) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Martes:</strong> BJJ + Gym (Core + Hombros + Estabilidad) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Miércoles:</strong> Gym (Tren Inferior – Fuerza Pesada + Control Técnico) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Jueves:</strong> BJJ + Gym (Brazos + Core Funcional) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Viernes:</strong> Gym (Full Body Funcional + Estabilidad Central) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Sábado:</strong> BJJ</li>
+                <li><strong>Domingo:</strong> Recuperación activa</li>
+              </ul>
+            </div>
+
+            <!-- AGOSTO 2025 -->
+            <div class="month-card">
+              <a href="Pages/RutinaAgosto.html">
                 <div class="month-title">AGOSTO 2025</div>
                 <div class="month-duration">(4 semanas)</div>
-            </a>
-        </div>
-        
-        <!-- Septiembre 2025 -->
-        <div class="month-card">
-            <a href="#">
+              </a>
+            </div>
+          </div>
+
+
+          <!-- Grid para Septiembre -->
+          <div class="grid" id="septiembre">
+            <h3>SEPTIEMBRE 2025</h3>
+
+            <!-- Semana 21 -->
+            <div class="week">
+              <h4>📅 Semana 21 – Semana 1 – Estabilidad + Volumen Técnico</h4>
+              <ul>
+                <li><strong>Lunes:</strong> Gym (Tren Superior – Pecho + Espalda + Tríceps) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Martes:</strong> BJJ + Gym (Core técnico + Estabilidad articular) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Miércoles:</strong> Gym (Tren Inferior – Cuádriceps + Glúteos + Isquios) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Jueves:</strong> BJJ + Gym (Espalda + Bíceps + Core dinámico) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Viernes:</strong> Gym (Full Body – Técnica compuesta + piernas + core) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Sábado:</strong> BJJ</li>
+                <li><strong>Domingo:</strong> Recuperación activa</li>
+              </ul>
+            </div>
+
+            <!-- Semana 22 -->
+            <div class="week">
+              <h4>📅 Semana 22 – Semana 2 – Progresión con Estímulo Metabólico</h4>
+              <ul>
+                <li><strong>Lunes:</strong> Gym (Tren Superior – Pecho + Espalda + Bíceps) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Martes:</strong> BJJ + Gym (Core fuerte + Fuerza de tracción) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Miércoles:</strong> Gym (Tren Inferior – Glúteos + Cuádriceps + Técnica excéntrica) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Jueves:</strong> BJJ + Gym (Espalda + Tríceps + Core funcional) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Viernes:</strong> Gym (Full Body – Potencia + equilibrio unilateral) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Sábado:</strong> BJJ</li>
+                <li><strong>Domingo:</strong> Recuperación activa</li>
+              </ul>
+            </div>
+
+            <!-- Semana 23 -->
+            <div class="week">
+              <h4>📅 Semana 23 – Semana 3 – Pico de Carga Controlada</h4>
+              <ul>
+                <li><strong>Lunes:</strong> Gym (Tren Superior – Pecho + Espalda + Tríceps) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Martes:</strong> BJJ + Gym (Core bajo tensión + ejercicios compuestos) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Miércoles:</strong> Gym (Tren Inferior – Peso libre + Cuádriceps + Glúteos) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Jueves:</strong> BJJ + Gym (Espalda pesada + Core explosivo) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Viernes:</strong> Gym (Full Body fuerte – Tracciones, empujes, piernas) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Sábado:</strong> BJJ</li>
+                <li><strong>Domingo:</strong> Recuperación activa</li>
+              </ul>
+            </div>
+
+            <!-- Semana 24 -->
+            <div class="week">
+              <h4>📅 Semana 24 – Semana 4 – Semana de descarga (Activación ligera)</h4>
+              <ul>
+                <li><strong>Lunes:</strong> Gym (Tren Superior Ligero – Pecho + Espalda) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Martes:</strong> BJJ + Gym (Estabilidad central + activación muscular) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Miércoles:</strong> Gym (Tren Inferior Ligero – Cuádriceps + Glúteos) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Jueves:</strong> BJJ + Gym (Bíceps + Core técnico) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Viernes:</strong> Gym (Full Body técnico suave) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Sábado:</strong> BJJ</li>
+                <li><strong>Domingo:</strong> Recuperación activa</li>
+              </ul>
+            </div>
+
+            <!-- SEPTIEMBRE 2025 -->
+            <div class="month-card">
+              <a href="Pages/RutinaSeptiembre.html">
                 <div class="month-title">SEPTIEMBRE 2025</div>
-                <div class="month-duration">(Próximamente)</div>
-            </a>
-        </div>
-        
-        <!-- Octubre 2025 -->
-        <div class="month-card">
-            <a href="#">
+                <div class="month-duration">(4 semanas)</div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Grid para Octubre -->
+          <div class="grid" id="octubre">
+            <h3>OCTUBRE 2025</h3>
+
+            <!-- Semana 26 -->
+            <div class="week">
+              <h4>📅 Semana 26 – Semana 1 – Reacondicionamiento post-descarga</h4>
+              <ul>
+                <li><strong>Lunes:</strong> Gym (Tren Superior – Activación técnica + resistencia muscular)</li>
+                <li><strong>Martes:</strong> BJJ + Gym (Core técnico + movilidad activa)</li>
+                <li><strong>Miércoles:</strong> Gym (Tren Inferior – Estabilidad + técnica de sentadilla)</li>
+                <li><strong>Jueves:</strong> BJJ + Gym (Pull ligero + core de control)</li>
+                <li><strong>Viernes:</strong> Gym (Full Body ligero + movimientos funcionales)</li>
+                <li><strong>Sábado:</strong> BJJ</li>
+                <li><strong>Domingo:</strong> Recuperación activa</li>
+              </ul>
+            </div>
+
+            <!-- Semana 27 -->
+            <div class="week">
+              <h4>📅 Semana 27 – Semana 2 – Bloque de fuerza controlada</h4>
+              <ul>
+                <li><strong>Lunes:</strong> Gym (Tren Superior – Presses + Remo + Tríceps)</li>
+                <li><strong>Martes:</strong> BJJ + Gym (Core funcional + dominadas asistidas)</li>
+                <li><strong>Miércoles:</strong> Gym (Tren Inferior – Peso muerto + Glúteos)</li>
+                <li><strong>Jueves:</strong> BJJ + Gym (Espalda + Curl bíceps + Plancha dinámica)</li>
+                <li><strong>Viernes:</strong> Gym (Full Body – Técnica compuesta + estabilidad)</li>
+                <li><strong>Sábado:</strong> BJJ</li>
+                <li><strong>Domingo:</strong> Recuperación activa</li>
+              </ul>
+            </div>
+
+            <!-- Semana 28 -->
+            <div class="week">
+              <h4>📅 Semana 28 – Semana 3 – Carga progresiva y core estable</h4>
+              <ul>
+                <li><strong>Lunes:</strong> Gym (Tren Superior – Pecho + Espalda + Core anti-rotación)</li>
+                <li><strong>Martes:</strong> BJJ + Gym (Core explosivo + movimientos de cadena posterior)</li>
+                <li><strong>Miércoles:</strong> Gym (Tren Inferior – Fuerza unilateral + técnica de desplantes)</li>
+                <li><strong>Jueves:</strong> BJJ + Gym (Pull dominante + core estático)</li>
+                <li><strong>Viernes:</strong> Gym (Full Body – Integración técnica de movimientos)</li>
+                <li><strong>Sábado:</strong> BJJ</li>
+                <li><strong>Domingo:</strong> Recuperación activa</li>
+              </ul>
+            </div>
+
+            <!-- Semana 29 -->
+            <div class="week">
+              <h4>📅 Semana 29 – Semana 4 – Pico de intensidad con control técnico</h4>
+              <ul>
+                <li><strong>Lunes:</strong> Gym (Tren Superior – Volumen alto en press + remo)</li>
+                <li><strong>Martes:</strong> BJJ + Gym (Core + fuerza explosiva)</li>
+                <li><strong>Miércoles:</strong> Gym (Tren Inferior – Sentadilla frontal + peso muerto)</li>
+                <li><strong>Jueves:</strong> BJJ + Gym (Espalda pesada + abdominales bajo carga)</li>
+                <li><strong>Viernes:</strong> Gym (Full Body fuerte – Técnica y potencia)</li>
+                <li><strong>Sábado:</strong> BJJ</li>
+                <li><strong>Domingo:</strong> Recuperación activa</li>
+              </ul>
+            </div>
+
+            <!-- Semana 30 -->
+            <div class="week">
+              <h4>📅 Semana 30 – Semana 5 – Descarga activa y movilidad</h4>
+              <ul>
+                <li><strong>Lunes:</strong> Gym (Tren Superior ligero + movilidad)</li>
+                <li><strong>Martes:</strong> BJJ + Gym (Activación central + movilidad articular)</li>
+                <li><strong>Miércoles:</strong> Gym (Tren Inferior ligero + core técnico)</li>
+                <li><strong>Jueves:</strong> BJJ + Gym (Bíceps + Estiramientos activos)</li>
+                <li><strong>Viernes:</strong> Gym (Full Body suave + control postural)</li>
+                <li><strong>Sábado:</strong> BJJ</li>
+                <li><strong>Domingo:</strong> Recuperación activa</li>
+              </ul>
+            </div>
+
+            <!-- OCTUBRE 2025 -->
+            <div class="month-card">
+              <a href="Pages/RutinaOctubre.html">
                 <div class="month-title">OCTUBRE 2025</div>
-                <div class="month-duration">(Próximamente)</div>
+                <div class="month-duration">(5 semanas)</div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Grid para Noviembre -->
+          <div class="grid" id="noviembre">
+            <h3>📅 NOVIEMBRE 2025 – Plan estructural</h3>
+
+            <!-- Semana 31 -->
+            <div class="week">
+              <h4>🔹 Semana 31 – Activación Ligera</h4>
+              <p>🟦 Objetivo: Preparar el cuerpo para el sprint final, consolidar la técnica, reducir carga.</p>
+              <ul>
+                <li><strong>Lunes:</strong> Tren Superior (Pecho + Espalda + Tríceps) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Martes:</strong> BJJ + Gym: Bíceps + Espalda + Core (carga media) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Miércoles:</strong> Tren Inferior (Cuádriceps + Glúteos + Isquios) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Jueves:</strong> BJJ + Gym: Bíceps + Espalda + Core (carga media) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Viernes:</strong> Full Body Suave + Finisher de Hombros (3 ej.)</li>
+                <li><strong>Sábado:</strong> BJJ</li>
+                <li><strong>Domingo:</strong> Recuperación activa (estiramientos, caminata ligera)</li>
+              </ul>
+            </div>
+
+            <!-- Semana 32 -->
+            <div class="week">
+              <h4>🔹 Semana 32 – Sprint Final Parte 1</h4>
+              <p>🟦 Objetivo: Introducir picos de intensidad, mantener control sobre la técnica y las cargas.</p>
+              <ul>
+                <li><strong>Lunes:</strong> Tren Superior (Pecho + Espalda + Bíceps) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Martes:</strong> BJJ + Gym: Bíceps + Espalda + Core (carga media) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Miércoles:</strong> Tren Inferior (Glúteos + Isquios + Cuádriceps) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Jueves:</strong> BJJ + Gym: Bíceps + Espalda + Core (carga media) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Viernes:</strong> Full Body (énfasis en espalda y piernas) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Sábado:</strong> BJJ + Gym: Bíceps + Espalda + Core (carga media) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Domingo:</strong> Recuperación activa (movilidad y caminata ligera)</li>
+              </ul>
+            </div>
+
+            <!-- Semana 33 -->
+            <div class="week">
+              <h4>🔹 Semana 33 – Sprint Final Parte 2</h4>
+              <p>🟦 Objetivo: Mantener la intensidad mientras se refuerzan las adaptaciones.</p>
+              <ul>
+                <li><strong>Lunes:</strong> Tren Superior (Espalda + Hombros + Tríceps) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Martes:</strong> BJJ + Gym: Bíceps + Espalda + Core (carga media) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Miércoles:</strong> Tren Inferior (Fuerza + Control técnico) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Jueves:</strong> BJJ + Gym: Bíceps + Espalda + Core (carga media) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Viernes:</strong> Full Body Explosivo + Core dinámico + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Sábado:</strong> BJJ</li>
+                <li><strong>Domingo:</strong> Recuperación activa</li>
+              </ul>
+            </div>
+
+            <!-- Semana 34 -->
+            <div class="week">
+              <h4>🔹 Semana 34 – Desafío y Control de Peso</h4>
+              <p>🟦 Objetivo: Consolidar todo lo trabajado en el mes, maximizando los resultados.</p>
+              <ul>
+                <li><strong>Lunes:</strong> Tren Superior (Pecho + Espalda + Bíceps) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Martes:</strong> BJJ + Gym: Bíceps + Espalda + Core (carga media) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Miércoles:</strong> Tren Inferior (Fuerza + Control técnico) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Jueves:</strong> BJJ + Gym: Bíceps + Espalda + Core (carga media) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Viernes:</strong> Full Body Suave (ligero) + Finisher de Hombros (3 ej.)</li>
+                <li><strong>Sábado:</strong> BJJ</li>
+                <li><strong>Domingo:</strong> Recuperación activa (movilidad, caminata ligera)</li>
+              </ul>
+            </div>
+
+            <!-- Semana 35 -->
+            <div class="week">
+              <h4>🔹 Semana 35 – Verificación Final</h4>
+              <p>🟦 Objetivo: Evaluar los avances, ajustar según necesidades y establecer base para diciembre.</p>
+              <ul>
+                <li><strong>Lunes:</strong> Tren Superior (Pecho + Espalda + Bíceps) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Martes:</strong> BJJ + Gym: Bíceps + Espalda + Core (carga media) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Miércoles:</strong> Tren Inferior (Fuerza + Control técnico) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Jueves:</strong> BJJ + Gym: Bíceps + Espalda + Core (carga media) + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Viernes:</strong> Full Body Explosivo + Core + Finisher de Hombros (5 ej.)</li>
+                <li><strong>Sábado:</strong> BJJ</li>
+                <li><strong>Domingo:</strong> Recuperación activa</li>
+              </ul>
+            </div>
+
+            <!-- NOVIEMBRE 2025 -->
+            <div class="month-card">
+              <a href="Pages/RutinaNoviembre.html">
+                <div class="month-title">NOVIEMBRE 2025</div>
+                <div class="month-duration">(5 semanas)</div>
+              </a>
+            </div>
+          </div>
+      
+
+        <!-- Grid para Diciembre -->
+        <div class="grid" id="diciembre">
+          <h3>📅 DICIEMBRE 2025 – Plan estructural</h3>
+
+          <!-- Semana 36 -->
+          <div class="week">
+            <h4>🔹 Semana 36 – Activación y Ajuste</h4>
+            <p>🟦 Objetivo: Evaluación de progreso, ajuste de cargas y optimización de la recuperación.</p>
+            <ul>
+              <li><strong>Lunes:</strong> Tren Superior (Pecho + Espalda + Brazos) + Finisher de Hombros (5 ej.)</li>
+              <li><strong>Martes:</strong> BJJ</li>
+              <li><strong>Miércoles:</strong> Tren Inferior (Piernas + Glúteos) + Finisher de Hombros (5 ej.)</li>
+              <li><strong>Jueves:</strong> BJJ</li>
+              <li><strong>Viernes:</strong> Full Body Ligero + Finisher de Hombros (2 ej.)</li>
+              <li><strong>Sábado:</strong> BJJ</li>
+              <li><strong>Domingo:</strong> Recuperación activa (estiramientos, caminata ligera)</li>
+            </ul>
+          </div>
+
+          <!-- Semana 37 -->
+          <div class="week">
+            <h4>🔹 Semana 37 – Recorte Estratégico</h4>
+            <p>🟦 Objetivo: Disminuir volumen y carga en ejercicios de menor prioridad, mientras se maximiza la calidad en los ejercicios principales.</p>
+            <ul>
+              <li><strong>Lunes:</strong> Tren Superior (Pecho + Espalda + Brazos) + Finisher de Hombros (5 ej.)</li>
+              <li><strong>Martes:</strong> BJJ</li>
+              <li><strong>Miércoles:</strong> Tren Inferior (Piernas + Glúteos) + Finisher de Hombros (5 ej.)</li>
+              <li><strong>Jueves:</strong> BJJ</li>
+              <li><strong>Viernes:</strong> Full Body Moderado + Finisher de Hombros (3 ej.)</li>
+              <li><strong>Sábado:</strong> BJJ</li>
+              <li><strong>Domingo:</strong> Recuperación activa</li>
+            </ul>
+          </div>
+
+          <!-- Semana 38 -->
+          <div class="week">
+            <h4>🔹 Semana 38 – Alta Eficiencia</h4>
+            <p>🟦 Objetivo: Maximizar la eficiencia de los entrenamientos, priorizando la intensidad y reduciendo las repeticiones en ejercicios auxiliares.</p>
+            <ul>
+              <li><strong>Lunes:</strong> Tren Superior (Pecho + Espalda + Brazos) + Finisher de Hombros (5 ej.)</li>
+              <li><strong>Martes:</strong> BJJ</li>
+              <li><strong>Miércoles:</strong> Tren Inferior (Piernas + Glúteos) + Finisher de Hombros (5 ej.)</li>
+              <li><strong>Jueves:</strong> BJJ</li>
+              <li><strong>Viernes:</strong> Full Body Fuerte + Finisher de Hombros (5 ej.)</li>
+              <li><strong>Sábado:</strong> BJJ</li>
+              <li><strong>Domingo:</strong> Recuperación activa</li>
+            </ul>
+          </div>
+
+          <!-- Semana 39 -->
+          <div class="week">
+            <h4>🔹 Semana 39 – Cierre Metabólico</h4>
+            <p>🟦 Objetivo: Intensificar el trabajo metabólico, combinando fuerza y resistencia en un solo entrenamiento.</p>
+            <ul>
+              <li><strong>Lunes:</strong> Tren Superior (Pecho + Espalda + Brazos) + Finisher de Hombros (5 ej.)</li>
+              <li><strong>Martes:</strong> BJJ</li>
+              <li><strong>Miércoles:</strong> Tren Inferior (Piernas + Glúteos) + Finisher de Hombros (5 ej.)</li>
+              <li><strong>Jueves:</strong> BJJ</li>
+              <li><strong>Viernes:</strong> Full Body Fuerte + Finisher de Hombros (5 ej.)</li>
+              <li><strong>Sábado:</strong> BJJ</li>
+              <li><strong>Domingo:</strong> Recuperación activa</li>
+            </ul>
+          </div>
+
+          <!-- Semana 40 -->
+          <div class="week">
+            <h4>🔹 Semana 40 – Descarga Final</h4>
+            <p>🟦 Objetivo: Recuperación final, reducción de carga y preparación para un descanso adecuado para el año siguiente.</p>
+            <ul>
+              <li><strong>Lunes:</strong> Tren Superior (Pecho + Espalda + Brazos) + Finisher de Hombros (5 ej.)</li>
+              <li><strong>Martes:</strong> BJJ</li>
+              <li><strong>Miércoles:</strong> Tren Inferior (Piernas + Glúteos) + Finisher de Hombros (5 ej.)</li>
+              <li><strong>Jueves:</strong> BJJ</li>
+              <li><strong>Viernes:</strong> Full Body Ligero + Finisher de Hombros (2 ej.)</li>
+              <li><strong>Sábado:</strong> BJJ</li>
+              <li><strong>Domingo:</strong> Recuperación activa</li>
+            </ul>
+          </div>
+
+          <!-- DICIEMBRE 2025 -->
+          <div class="month-card">
+            <a href="Pages/RutinaDiciembre.html">
+              <div class="month-title">DICIEMBRE 2025</div>
+              <div class="month-duration">(5 semanas)</div>
             </a>
+          </div>
         </div>
-    </div>
+  </div>
+
 </body>
 </html>
