@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis de Resultados Corporales | Leo Cruz</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f7fa;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .analysis-page {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .page-header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #4CAF50;
+            padding-bottom: 15px;
+        }
+        
+        .page-header h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 2em;
+        }
+        
+        .measurement-date {
+            font-size: 1.1em;
+            color: #7f8c8d;
+            font-weight: bold;
+        }
+        
+        .back-button {
+            display: inline-block;
+            margin-bottom: 20px;
+            background-color: #3498db;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .back-button:hover {
+            background-color: #2980b9;
+        }
+        
+        /* Secciones de análisis */
+        .analysis-section {
+            margin-bottom: 40px;
+        }
+        
+        .analysis-section h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 5px;
+            display: inline-block;
+            font-size: 1.5em;
+        }
+        
+        /* Tabla de desglose */
+        .metrics-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.95em;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .metrics-table th, 
+        .metrics-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .metrics-table th {
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .metrics-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .metrics-table tr:hover {
+            background-color: #f1f1f1;
+        }
+        
+        /* Tarjetas de recomendaciones */
+        .recommendation-card {
+            background-color: #f8f9fa;
+            border-left: 4px solid #4CAF50;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 5px 5px 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .recommendation-card h3 {
+            margin-top: 0;
+            color: #2c3e50;
+            font-size: 1.2em;
+        }
+        
+        .summary-card {
+            background-color: #e8f4fc;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 30px;
+            border-left: 4px solid #3498db;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: bold;
+            margin-left: 5px;
+        }
+        
+        .badge-danger {
+            background-color: #e74c3c;
+            color: white;
+        }
+        
+        .badge-warning {
+            background-color: #f39c12;
+            color: white;
+        }
+        
+        .badge-good {
+            background-color: #2ecc71;
+            color: white;
+        }
+        
+        /* Iconos */
+        .icon {
+            font-size: 1.2em;
+            margin-right: 5px;
+        }
+        
+        /* Listas */
+        ul {
+            padding-left: 20px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        /* Colores para indicadores */
+        .red {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        
+        .yellow {
+            color: #f39c12;
+            font-weight: bold;
+        }
+        
+        .green {
+            color: #2ecc71;
+            font-weight: bold;
+        }
+        
+        /* Comparativa */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.9em;
+        }
+        
+        .comparison-table th, 
+        .comparison-table td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .comparison-table th {
+            background-color: #3498db;
+            color: white;
+        }
+        
+        .improvement {
+            background-color: #e8f8f5;
+        }
+        
+        .worsening {
+            background-color: #fdedec;
+        }
+        
+        .neutral {
+            background-color: #fef9e7;
+        }
+    </style>
+</head>
+<body>
+    <div class="analysis-page">
+        <a href="/Index.html" class="back-button">← Volver al Inicio</a>
+        
+        <div class="page-header">
+            <h1><span class="icon">📊</span> Análisis de Resultados Corporales</h1>
+            <div class="measurement-date">Fecha de medición: 01/05/2025</div>
+        </div>
+        
+        <!-- Datos principales -->
+        <div class="analysis-section">
+            <h2><span class="icon">🧍‍♂️</span> Datos principales</h2>
+            <ul>
+                <li><strong>Nombre:</strong> Leo Cruz</li>
+                <li><strong>Edad real:</strong> 22 años</li>
+                <li><strong>Edad metabólica:</strong> 32 años <span class="badge badge-warning">Metabolismo moderado</span></li>
+                <li><strong>Peso actual:</strong> 120.85 kg</li>
+                <li><strong>IMC (BMI):</strong> 36.1 <span class="badge badge-danger">Obesidad</span></li>
+                <li><strong>Grasa corporal:</strong> 35.2% <span class="badge badge-danger">Elevada</span></li>
+            </ul>
+        </div>
+        
+        <!-- Desglose detallado -->
+        <div class="analysis-section">
+            <h2><span class="icon">🔍</span> Desglose importante</h2>
+            <table class="metrics-table">
+                <thead>
+                    <tr>
+                        <th>Indicador</th>
+                        <th>Valor</th>
+                        <th>Interpretación</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Grasa corporal</strong></td>
+                        <td>35.2% (≈42.5 kg)</td>
+                        <td class="red">Muy alto. Ideal entre 15%-20%. Prioridad bajarla.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Masa muscular esquelética</strong></td>
+                        <td>33.0% (≈39.8 kg)</td>
+                        <td class="green">Saludable. Buena base muscular para trabajar.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Músculo total</strong></td>
+                        <td>57.9% (≈70.0 kg)</td>
+                        <td class="green">Excelente. Gran ventaja para quemar grasa.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Grasa visceral</strong></td>
+                        <td>26.0</td>
+                        <td class="red">Extremadamente alta. Lo ideal es &lt;13. Atención urgente.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Agua corporal</strong></td>
+                        <td>48.4% (≈58.5 kg)</td>
+                        <td class="yellow">Baja. Debería estar por encima de 50%. Hidratarse más.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Proteínas</strong></td>
+                        <td>9.5%</td>
+                        <td class="red">Muy bajo. Necesita subir a 16-18% para salud celular.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Peso sin grasa</strong></td>
+                        <td>78.3 kg</td>
+                        <td class="green">Correcto. Buen nivel de masa magra.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Metabolismo basal</strong></td>
+                        <td>2346.3 kcal/día</td>
+                        <td class="yellow">Promedio. Con músculo activo podría elevarse más.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Huesos</strong></td>
+                        <td>4.0 kg</td>
+                        <td class="green">Perfecto. Buena estructura ósea.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Grado de obesidad</strong></td>
+                        <td>67.6%</td>
+                        <td class="red">Grave. Se requiere acción constante y prolongada.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- Interpretación -->
+        <div class="analysis-section">
+            <h2><span class="icon">🧠</span> ¿Qué significa esto?</h2>
+            <div class="recommendation-card">
+                <p><strong>💪 Has ganado músculo y bajado algo de grasa,</strong> lo cual es excelente.</p>
+                <p><strong>🔥 La grasa visceral sigue muy alta,</strong> pero ya estás en el camino correcto.</p>
+                <p><strong>🧂 Tu cuerpo está ligeramente mejor hidratado,</strong> aunque aún por debajo del ideal.</p>
+                <p><strong>💥 El metabolismo mejoró bastante:</strong> bajaste 12 años en edad metabólica.</p>
+                <p><strong>⚠️ Las proteínas siguen siendo un área crítica:</strong> hay que subirlas ya.</p>
+            </div>
+        </div>
+        
+        <!-- Recomendaciones -->
+        <div class="analysis-section">
+            <h2><span class="icon">🎯</span> Plan de Acción</h2>
+            
+            <div class="recommendation-card">
+                <h3>1️⃣ Meta a Corto Plazo (Mayo - Julio)</h3>
+                <ul>
+                    <li><strong>Bajar a 110 kg</strong></li>
+                    <li><strong>Enfocar en reducir grasa visceral</strong> y aumentar proteínas</li>
+                </ul>
+            </div>
+            
+            <div class="recommendation-card">
+                <h3>2️⃣ Meta Intermedia (Julio - Octubre)</h3>
+                <ul>
+                    <li><strong>Llegar a 100 kg</strong></li>
+                    <li><strong>Mayor definición muscular</strong> y control de insulina</li>
+                </ul>
+            </div>
+            
+            <div class="recommendation-card">
+                <h3>3️⃣ Meta Final (Octubre 2025 - Mayo 2026)</h3>
+                <ul>
+                    <li><strong>Alcanzar 85 kg</strong> y &lt;20% de grasa</li>
+                    <li><strong>Entrar en una fase atlética</strong> y funcional</li>
+                </ul>
+            </div>
+            
+            <div class="recommendation-card">
+                <h3>🍽️ Claves de nutrición y agua</h3>
+                <ul>
+                    <li><span class="icon">💧</span> <strong>3 litros de agua/día</strong></li>
+                    <li><span class="icon">🥩</span> <strong>Proteína en cada comida</strong></li>
+                    <li><span class="icon">🥦</span> <strong>Vegetales abundantes</strong></li>
+                    <li><span class="icon">🕒</span> <strong>Comer cada 3-4 horas</strong></li>
+                    <li><span class="icon">❌</span> <strong>Reducir azúcar, pan, frituras</strong></li>
+                </ul>
+            </div>
+            
+            <div class="recommendation-card">
+                <h3>🏃‍♂️ Entrenamiento base</h3>
+                <ul>
+                    <li><span class="icon">🚶</span> <strong>Caminar todos los días</strong></li>
+                    <li><span class="icon">🏋️</span> <strong>Pesas 3x semana</strong></li>
+                    <li><span class="icon">🫀</span> <strong>Cardio ligero intercalado</strong></li>
+                    <li><span class="icon">🥋</span> <strong>Incluir BJJ y gimnasio conforme avances</strong></li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Comparativa -->
+        <div class="analysis-section">
+            <h2><span class="icon">📈</span> Comparativa con medición anterior</h2>
+            <p>Entre el 19/04/2025 y el 01/05/2025</p>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Indicador</th>
+                        <th>19/04/2025</th>
+                        <th>01/05/2025</th>
+                        <th>Cambio</th>
+                        <th>Evaluación</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="improvement">
+                        <td><strong>Peso corporal (kg)</strong></td>
+                        <td>122.10</td>
+                        <td>120.85</td>
+                        <td>-1.25</td>
+                        <td class="green">Bajó (buena reducción)</td>
+                    </tr>
+                    <tr class="improvement">
+                        <td><strong>IMC</strong></td>
+                        <td>47.7</td>
+                        <td>36.10</td>
+                        <td>-11.60</td>
+                        <td class="green">Mejoró significativamente</td>
+                    </tr>
+                    <tr class="improvement">
+                        <td><strong>Grasa corporal (%)</strong></td>
+                        <td>45.0</td>
+                        <td>35.20</td>
+                        <td>-9.80</td>
+                        <td class="green">Excelente reducción</td>
+                    </tr>
+                    <tr class="improvement">
+                        <td><strong>Peso de grasa corporal (kg)</strong></td>
+                        <td>54.9</td>
+                        <td>42.50</td>
+                        <td>-12.40</td>
+                        <td class="green">Gran pérdida de grasa</td>
+                    </tr>
+                    <tr class="improvement">
+                        <td><strong>Músculo total (%)</strong></td>
+                        <td>51.7</td>
+                        <td>57.90</td>
+                        <td>+6.20</td>
+                        <td class="green">Aumento notable</td>
+                    </tr>
+                    <tr class="improvement">
+                        <td><strong>Peso muscular (kg)</strong></td>
+                        <td>63.2</td>
+                        <td>70.00</td>
+                        <td>+6.80</td>
+                        <td class="green">Ganancia muscular excelente</td>
+                    </tr>
+                    <tr class="improvement">
+                        <td><strong>Músculo esquelético (%)</strong></td>
+                        <td>25.9</td>
+                        <td>33.00</td>
+                        <td>+7.10</td>
+                        <td class="green">Mejoró considerablemente</td>
+                    </tr>
+                    <tr class="improvement">
+                        <td><strong>Peso músculo esquelético (kg)</strong></td>
+                        <td>31.5</td>
+                        <td>39.80</td>
+                        <td>+8.30</td>
+                        <td class="green">Gran progreso muscular</td>
+                    </tr>
+                    <tr class="worsening">
+                        <td><strong>Grasa visceral</strong></td>
+                        <td>21.5</td>
+                        <td>26.00</td>
+                        <td>+4.50</td>
+                        <td class="red">Aumentó (necesita atención)</td>
+                    </tr>
+                    <tr class="improvement">
+                        <td><strong>Agua corporal (%)</strong></td>
+                        <td>39.0</td>
+                        <td>48.40</td>
+                        <td>+9.40</td>
+                        <td class="green">Hidratación mejorada</td>
+                    </tr>
+                    <tr class="improvement">
+                        <td><strong>Peso del agua (kg)</strong></td>
+                        <td>47.7</td>
+                        <td>58.50</td>
+                        <td>+10.80</td>
+                        <td class="green">Mejor retención hídrica</td>
+                    </tr>
+                    <tr class="worsening">
+                        <td><strong>Proteínas (%)</strong></td>
+                        <td>12.7</td>
+                        <td>9.50</td>
+                        <td>-3.20</td>
+                        <td class="red">Disminución (requiere ajuste)</td>
+                    </tr>
+                    <tr class="improvement">
+                        <td><strong>Edad metabólica (años)</strong></td>
+                        <td>44</td>
+                        <td>32</td>
+                        <td>-12.00</td>
+                        <td class="green">Mejoría metabólica notable</td>
+                    </tr>
+                    <tr class="improvement">
+                        <td><strong>Metabolismo basal (kcal/día)</strong></td>
+                        <td>1830.9</td>
+                        <td>2346.3</td>
+                        <td>+515.4</td>
+                        <td class="green">Aumento significativo</td>
+                    </tr>
+                    <tr class="improvement">
+                        <td><strong>Peso sin grasa (kg)</strong></td>
+                        <td>67.2</td>
+                        <td>78.3</td>
+                        <td>+11.10</td>
+                        <td class="green">Excelente ganancia de masa magra</td>
+                    </tr>
+                    <tr class="neutral">
+                        <td><strong>Huesos (kg)</strong></td>
+                        <td>4.0</td>
+                        <td>4.0</td>
+                        <td>0.00</td>
+                        <td class="green">Estable (normal)</td>
+                    </tr>
+                    <tr class="improvement">
+                        <td><strong>Grado de obesidad (%)</strong></td>
+                        <td>126.1</td>
+                        <td>67.6</td>
+                        <td>-58.5</td>
+                        <td class="green">Reducción muy importante</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- Resumen -->
+        <div class="summary-card">
+            <h2><span class="icon">✅</span> Conclusión rápida</h2>
+            <p><strong>Has bajado peso y grasa, subido músculo y bajado tu edad metabólica 12 años.</strong></p>
+            <p>La grasa visceral aumentó un poco, probablemente por estrés o comida alta en azúcares/sales, pero puede corregirse rápido.</p>
+            <p>Hay que subir proteínas urgentemente y mantener el ritmo de ejercicio y agua.</p>
+            <p><strong>🎯 ¡Estás avanzando, Leo! Si sigues así, el cambio físico en 2 meses será radical.</strong></p>
+        </div>
+    </div>
+</body>
+</html>

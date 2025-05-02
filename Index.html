@@ -130,52 +130,110 @@
     <div class="weight-container">
       <h1>Pesaje Actual</h1>
       <div class="weight-date">19/04/2025</div>
-    
-      <!-- Contenedor de tres columnas -->
-      <div class="weight-cards-row">
-        <!-- Columna izquierda - Pesaje actual -->
-        <div class="weight-card current">
-          <div class="card-weight">122.1 kg</div>
-          <a href="/Pages/PesajeActuayAnalisis.html" class="analysis-link">Ver Análisis del pesaje actual</a>
-        </div>
-    
-        <!-- Columna centro - Añadir nuevo -->
-        <div class="weight-card add-new">
-          <div class="add-new-content">
-            <span class="plus-icon">+</span>
-            <span class="add-text">Añadir nuevo pesaje</span>
-          </div>
-        </div>
-    
-        <!-- Columna derecha - Meta -->
-        <div class="weight-card meta">
-          <div class="meta-content">
-            <span class="meta-text">Meta:</span>
-            <span class="meta-value">85kg</span>
-          </div>
-        </div>
+  
+      <div class="progress-container">
+        <div id="mainProgressBar" class="progress-bar">3%</div>
+        <span class="meta-flag" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 1.5em; color: #F44336;">🚩</span>
       </div>
-    </div>
+  
+      <div class="weight-grid">
+        <div class="weight-card current">
+          <div id="mainCurrentWeight" class="card-weight">122.10kg</div>
+          <div class="weight-date">19/04/2025</div>
+          <div id="pesoActual" style="display: none;">122.10</div>
+          <a href="/Pages/PesajeActuayAnalisis.html" class="analysis-link">Ver Análisis</a>
+        </div>
 
-    <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const barra = document.getElementById('mainProgressBar');
-      const pesoMeta = parseFloat(document.getElementById('mainTargetWeight').innerText);
-      const pesoActual = parseFloat(document.getElementById('mainCurrentWeight').innerText);
-      const pesoInicial = parseFloat(document.getElementById('pesoActual').innerText);
+        <div class="weight-card add-new">
+            <div class="add-new-content">
+                <span class="plus-icon"></span>
+                <span class="add-text"> Agregar los nuevos pesajes</span>
+            </div>
+        </div>
 
-      // Cálculo del progreso (para bajar de peso)
-      const progreso = ((pesoInicial - pesoActual) / (pesoInicial - pesoMeta)) * 100;
-      const porcentaje = Math.max(0, Math.min(100, Math.round(progreso)));
-
-      barra.style.width = porcentaje + '%';
-      barra.innerText = porcentaje + '% completado';
-    });
-    </script>
-  </div>
+        <div class="weight-card meta solo-meta">
+            <div class="meta-content">
+                <span class="meta-text">Meta:</span>
+                <span id="mainTargetWeight" class="meta-value">85.0kg<keygen></span>
+            </div>
+        </div>
+  
+          <div class="weight-category-title">Fase 1: Mayo a Julio 2025</div>
+          <div class="weight-card fase1">
+              <div class="card-weight">120.85 kg</div>
+              <div class="weight-date">01/05/2025</div>
+              <a href="/Pages/NuevosPesajes/Pesajes-Fase1/01_05_2025.html" class="analysis-link">Ver análisis</a>
+          </div>
           
-      
-    
+          <!--
+          <div class="weight-card fase1">
+              <div class="card-weight"></div>
+              <div class="weight-date"></div>
+              <a href="/Pages/NuevosPesajes/Pesajes-Fase1/15_05_2025.html" class="analysis-link">Ver análisis</a>
+          </div>
+          -->
+          <div class="weight-category-title2">Fase 2: Desde Agosto 2025</div>
+          
+          <!--
+          <div class="weight-card fase2">
+              <div class="card-weight"></div>
+              <div class="weight-date"></div>
+              <a href="" class="analysis-link">Ver análisis</a>
+          </div>
+          -->
+
+          <div class="weight-category-title3">Fase 3: Al llegar a 100 kg</div>
+          
+          <!--
+          <div class="weight-card fase3">
+              <div class="card-weight"></div>
+              <div class="weight-date"></div>
+              <a href="/Pages/NuevosPesajes/Pesajes-Fase3/05_10_2025.html" class="analysis-link">Ver análisis</a>
+          </div>
+          -->
+      </div>
+  </div>
+
+    <!-- Script de progreso -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+          const barra = document.getElementById('mainProgressBar');
+          const pesoMeta = 85.0;
+          const pesoInicial = 122.10;
+  
+          function actualizarBarraDeProgreso() {
+              const registrosPesaje = document.querySelectorAll('.weight-card.fase1, .weight-card.fase2, .weight-card.fase3, .weight-card.current');
+              let ultimoPeso = pesoInicial;
+              let ultimaFecha = new Date(0);
+  
+              registrosPesaje.forEach(registro => {
+                  const pesoElemento = registro.querySelector('.card-weight');
+                  const fechaElemento = registro.querySelector('.weight-date');
+  
+                  if (pesoElemento && fechaElemento) {
+                      const pesoTexto = pesoElemento.innerText.replace(' kg', '').trim();
+                      const fechaTexto = fechaElemento.innerText;
+                      const fechaRegistro = new Date(fechaTexto.split('/').reverse().join('-'));
+  
+                      if (!isNaN(fechaRegistro.getTime()) && fechaRegistro > ultimaFecha) {
+                          ultimaFecha = fechaRegistro;
+                          ultimoPeso = parseFloat(pesoTexto);
+                      }
+                  }
+              });
+  
+              const progreso = ((pesoInicial - ultimoPeso) / (pesoInicial - pesoMeta)) * 100;
+              const porcentaje = Math.max(0, Math.min(100, Math.round(progreso)));
+  
+              barra.style.width = porcentaje + '%';
+              barra.innerText = porcentaje + '% completado';
+          }
+  
+          actualizarBarraDeProgreso();
+      });
+  </script>
+
+    <!--Contedio de las rutinas.-->
     <div class="container">
 
         <div class="card">

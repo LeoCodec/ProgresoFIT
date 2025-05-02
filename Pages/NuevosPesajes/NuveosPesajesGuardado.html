@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pesaje Guardado</title>
+</head>
+<body>
+  <h1>✅ ¡Pesaje guardado con éxito!</h1>
+  <p><strong>Nombre:</strong> <span id="nombre"></span></p>
+  <p><strong>Peso registrado:</strong> <span id="peso"></span> kg</p>
+  <p><strong>Fecha:</strong> <span id="fecha"></span></p>
+  <a href="/index.html">← Volver al inicio</a>
+
+  <script>
+    document.getElementById("nombre").textContent = localStorage.getItem("nuevoPesajeNombre");
+    document.getElementById("peso").textContent = localStorage.getItem("nuevoPesajePeso");
+    document.getElementById("fecha").textContent = localStorage.getItem("nuevoPesajeFecha");
+  </script>
+</body>
+</html>
